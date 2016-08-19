@@ -1,5 +1,13 @@
 # java-scala-mix-sbt
 
+### CHAPTER 16 Databases and Persistence
+
+#### 16.1. Connecting to MySQL with JDBC
+**ScalaJdbcConnectSelect**
+
+#### 16.2. Connecting to a Database with the Spring Framework
+**ScalaJdbcConnectBySpring**
+
 ### CHAPTER 17 Interacting with Java
 
 #### 17.1. Going to and from Java Collections（Scala调用Java）

@@ -9,6 +9,13 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3.15",
-  "org.springframework" % "spring" % "2.5.6"
+  "commons-dbcp" % "commons-dbcp" % "1.4",
+  "org.springframework" % "spring-beans" % "4.2.7.RELEASE",
+  "org.springframework" % "spring-core" % "4.2.7.RELEASE",
+  "org.springframework" % "spring-context" % "4.2.7.RELEASE",
+  "org.springframework" % "spring-aop" % "4.2.7.RELEASE",
+  "org.springframework" % "spring-expression" % "4.2.7.RELEASE",
+  "org.springframework" % "spring-jdbc" % "4.2.7.RELEASE"
 )
 
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.39"

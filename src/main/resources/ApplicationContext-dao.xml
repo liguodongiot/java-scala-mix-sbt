@@ -3,14 +3,10 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
-       default-lazy-init="false">
-
-    <bean id="dog" class="scalacookbook.chapter17.Dog">
-        <constructor-arg value="Fido" />
+      >
+    <bean id="userDao" class="scalacookbook.chapter16.UserDao">
+        <property name="dataSource" ref="basicDataSource"/>
     </bean>
 
-    <bean id="cat" class="scalacookbook.chapter17.Cat">
-        <constructor-arg value="Felix" />
-    </bean>
 
 </beans>
