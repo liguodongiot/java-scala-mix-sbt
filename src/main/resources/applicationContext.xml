@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-lazy-init="false">
+    <bean id="dog" class="scalacookbook.chapter17.Dog">
+        <constructor-arg value="Fido" />
+    </bean>
+
+    <bean id="cat" class="scalacookbook.chapter17.Cat">
+        <constructor-arg value="Felix" />
+    </bean>
+
+</beans>
