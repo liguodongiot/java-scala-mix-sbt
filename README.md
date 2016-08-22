@@ -33,6 +33,10 @@
 
 
 
+### CHAPTER 19 Types
 
-****
-****
+#### Introduction
+**VarianceExamples(Variance)**
+
+#### 19.1. Creating Classes That Use Generic Types
+**CreateClassUseGenericTypes**
