@@ -40,3 +40,46 @@
 
 #### 19.1. Creating Classes That Use Generic Types
 **CreateClassUseGenericTypes**
+
+#### 19.2. Creating a Method That Takes a Simple Generic Type
+**CreateMethodSimpleGenericType**
+
+#### 19.3. Using Duck Typing (Structural Types)
+**DuckTyping**
+
+#### 19.4. Make Mutable Collections Invariant
+**MakeMutableCollectionsInvariant**
+
+#### 19.5. Make Immutable Collections Covariant
+**MakeImmutableCollectionsCovariant**
+
+#### 19.6. Create a Collection Whose Elements Are All of Some Base Type
+**CreateCollectionBaseType**
+
+#### 19.7. Selectively Adding New Behavior to a Closed Model
+**SelectivelyAddNewBehaviorClosedModel**
+
+#### 19.8. Building Functionality with Types
+**BuildFunctionTypes**
+
+### Chapter 20. Idioms
+
+#### 20.1. Create Methods with No Side Effects (Pure Functions)
+****
+
+#### 20.2. Prefer Immutable Objects
+****
+
+#### 20.3. Think “Expression-Oriented Programming”
+****
+
+#### 20.4. Use Match Expressions and Pattern Matching
+****
+
+#### 20.5. Eliminate null Values from Your Code
+****
+
+#### 20.6. Using the Option/Some/None Pattern
+****
+
+
