@@ -18,14 +18,17 @@ object VariableToString {
 
     //s is a method
     println(s"$name is $age years old, and weighs $weight pounds.")
+
+    //Using expressions in string literals
     println(s"Age next year: ${age + 1}")
     println(s"You are 33 years old: ${age == 33}")
 
     case class Student(name: String, score: Int)
     val hannah = Student("Hannah", 95)
+
     println(s"${hannah.name} has a score of ${hannah.score}")
 
-    // error: this is intentionally wrong 这是一个如意的错误
+    // error: this is intentionally wrong 这是一个意料中的错误
     println(s"$hannah.name has a score of $hannah.score")
 
     //The f string interpolator(printf style formatting)
@@ -37,9 +40,9 @@ object VariableToString {
     println(out)
 
     println
+
     //Scala 2.10新增了raw插值函数，用于处理转义字符
     println(s"foo\nbar")
-
     println
 
     println(raw"foo\nbar")

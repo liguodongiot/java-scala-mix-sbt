@@ -24,25 +24,32 @@ equalsIgnoreCase
 ```
 创建多行字符串：
 stripMargin
-
-
+replaceAll
 ```
 
 
 #### 1.3. Splitting Strings（分割字符串）
 **SplitString**
 ```
-
+split
+trim
 ```
 
-#### 1.4. Substituting Variables into Strings
+#### 1.4. Substituting Variables into Strings（将变量插入到字符串里）
 **VariableToString**
 ```
-
+s
+f
+raw
 ```
-#### 1.5. Processing a String One Character at a Time
-
+#### 1.5. Processing a String One Character at a Time(一次处理字符串的一个字符)
 **StringOneCharOneTime**
+```
+toUpper
+toByte
+toChar
+```
+
 
 #### 1.6. Finding Patterns in Strings
 

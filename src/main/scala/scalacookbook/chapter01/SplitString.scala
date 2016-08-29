@@ -5,6 +5,7 @@ package scalacookbook.chapter01
  */
 object SplitString {
   def main(args: Array[String]) {
+
     "hello world".split(" ").foreach(println)
 
     val s = "eggs, milk, butter, Coco Puffs"
@@ -14,13 +15,16 @@ object SplitString {
     s.split(",").map(_.trim).foreach(print)
     println
 
+    //split a string on whitespace characters
     "hello world, this is Al".split("\\s+").foreach(print)
-    println
+    println("\n~~~~~~~~~~~~~~")
 
     // split with a String argument
     println("hello world".split(" "))
 
     // split with a Char argument
     println("hello world".split(' '))
+
+    "hello world".split(' ').foreach(println)
   }
 }

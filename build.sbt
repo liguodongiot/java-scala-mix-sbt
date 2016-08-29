@@ -2,10 +2,13 @@ name := "java-scala-mix-sbt"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.4"
 
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
+resolvers ++= Seq(
+  "maven Repository" at "http://repo1.maven.org/maven2/"
+)
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3.15",
@@ -20,4 +23,5 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.39"
 
-libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test"
+//libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test"
+libraryDependencies += "org.scalatest" % "scalatest_2.10" % "2.2.6" % "test"
