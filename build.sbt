@@ -2,7 +2,7 @@ name := "java-scala-mix-sbt"
 
 version := "1.0"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.7"
 
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
@@ -19,3 +19,5 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.39"
+
+libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test"
