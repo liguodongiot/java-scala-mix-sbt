@@ -14,6 +14,8 @@ object Main {
     println
     temp.map(_+" ").foreach(print)
 
+    println("\nfor loop:")
+
     for(c <- temp){
       print(c+" ")
     }

@@ -13,6 +13,7 @@ object TestStringEqual {
     println(s1==s3)
     println(s2==s3)
 
+
     val s4:String = null
     println(s3==s4)
     println(s4==s3)

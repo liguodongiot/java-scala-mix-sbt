@@ -5,25 +5,41 @@
 ### Chapter 1. Strings
 
 #### Introduction
-
 **Main**
+```
+字符串遍历、截取等操作
+map foreach filter drop take capitalize
+```
 
 #### 1.1. Testing String Equality
-
 **TestStringEqual**
+```
+比较字符串是否相等
+toUpperCase
+equalsIgnoreCase
+```
 
 #### 1.2. Creating Multiline Strings
-
 **CreateMullineString**
+```
+创建多行字符串：
+stripMargin
+
+
+```
+
 
 #### 1.3. Splitting Strings（分割字符串）
-
 **SplitString**
+```
+
+```
 
 #### 1.4. Substituting Variables into Strings
-
 **VariableToString**
+```
 
+```
 #### 1.5. Processing a String One Character at a Time
 
 **StringOneCharOneTime**
