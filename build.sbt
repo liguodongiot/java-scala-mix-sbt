@@ -43,7 +43,7 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.39"
 
 libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.1.3"
-  ,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.10" % "2.1.2"
-  //,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2"
+  //,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.10" % "2.1.2"
+  ,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2"
 )
 
