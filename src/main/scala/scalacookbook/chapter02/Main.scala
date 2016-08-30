@@ -19,14 +19,19 @@ object Main {
     println(Float.MinValue)
 
     println("===~~~===~~~===")
-//    import com.github.nscala_time.time.Imports._
-//
-//
-//    println(DateTime.now) // returns org.joda.time.DateTime
-//    println(2.months)
-//
-//    //DateTime.nextMonth < DateTime.now + 2.day
-//    println((2.hours + 45.minutes + 10.seconds).millis)
+    import com.github.nscala_time.time.Imports._
+
+
+    println(DateTime.now) // returns org.joda.time.DateTime
+    println(2.months)
+    println(DateTime.nextMonth < DateTime.now + 2.day)
+
+    println((2.hours + 45.minutes + 10.seconds).toPeriod)
+
+    //+1天
+    println((200.years + 32.months +2.hours + 45.minutes + 10.seconds).plusDays(1))
+
+    println((2.hours + 45.minutes + 10.seconds).millis)
 
 
   }

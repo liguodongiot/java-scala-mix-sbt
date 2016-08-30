@@ -11,18 +11,16 @@
 map foreach filter drop take capitalize
 ```
 
-#### 1.1. Testing String Equality
+#### 1.1. Testing String Equality（比较字符串是否相等）
 **TestStringEqual**
 ```
-比较字符串是否相等
 toUpperCase
 equalsIgnoreCase
 ```
 
-#### 1.2. Creating Multiline Strings
+#### 1.2. Creating Multiline Strings（创建多行字符串）
 **CreateMullineString**
 ```
-创建多行字符串：
 stripMargin
 replaceAll
 ```
@@ -81,23 +79,33 @@ charAt
 apply
 ```
 
-#### 1.10. Add Your Own Methods to the String Class
+#### 1.10. Add Your Own Methods to the String Class（增加自己的方法在String类中）
 **AddOwnMethodInString**
-
-**AddOwnMethodInString2**
-版本2.10之前的使用方式
-
+```
+在object中加入隐式类
+在package object中加入隐式类
+```
+**AddOwnMethodInString2（版本2.10之前的使用方式）**
+```
+在class中定义自己的方法，然后定义另外一个方法处理隐式转换。
+```
 **AddOwnMethodInStringTalk**
-
+```
+隐式转换有返回类型
+```
 ### Chapter 2. Numbers
 
 #### Introduction
-
 **Main**
+```
+nscala_time
+```
 
 #### 2.1. Parsing a Number from a String
-
 **ParseNumFromString**
+```
+
+```
 
 #### 2.2. Converting Between Numeric Types (Casting)
 

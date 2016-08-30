@@ -11,6 +11,7 @@ object AddOwnMethodInString2 {
 
   def main(args: Array[String]) {
     println("HAL".increment)
+
   }
 
 }

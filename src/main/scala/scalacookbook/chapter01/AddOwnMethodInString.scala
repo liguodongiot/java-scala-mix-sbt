@@ -5,10 +5,13 @@ package scalacookbook.chapter01
  */
 object AddOwnMethodInString extends App{
 
-//  import StringUtils._
-//  println("HAL".increment)
+  import StringUtils._
+  println("HAL".increment)
 
-  import utils._
+  println("LIGUODONG".increment)
+  println("BDCS".decrease)
+
+  import Utils._
   println("HALS".increment2)
 
 }
@@ -18,12 +21,13 @@ object AddOwnMethodInString extends App{
 object StringUtils {
   implicit class StringImprovements(val s: String) {
     def increment = s.map(c => (c + 1).toChar)
+    def decrease = s.map(c => (c - 1).toChar)
   }
 }
 
 //Put the implicit class in a package object
-package object utils {
-  implicit class StringImprovements(val s: String) {
+package object Utils {
+  implicit class StringImprovementsUtils(val s: String) {
     def increment2 = s.map(c => (c + 1).toChar)
   }
 }
