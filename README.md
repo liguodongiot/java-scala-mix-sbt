@@ -101,10 +101,15 @@ apply
 nscala_time
 ```
 
-#### 2.1. Parsing a Number from a String
+#### 2.1. Parsing a Number from a String（将字符串转换成数值）
 **ParseNumFromString**
 ```
-
+toInt
+toDouble
+toFloat
+toLong
+toShort
+toByte
 ```
 
 #### 2.2. Converting Between Numeric Types (Casting)

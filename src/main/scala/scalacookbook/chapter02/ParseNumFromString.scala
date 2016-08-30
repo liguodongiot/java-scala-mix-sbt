@@ -31,14 +31,16 @@ object ParseNumFromString extends App{
 
   val bInt = BigInt("1")
   val bDecimal = BigDecimal("3.14159")
+  println(bInt.getClass.getName+" "+bInt)
+  println(bDecimal.getClass.getName+" "+bDecimal)
 
 
-
-  println(Integer.parseInt("1", 2))
+  println(Integer.parseInt("1", 2)) //二进制转换成整数
   println(Integer.parseInt("10", 2))
-  println(Integer.parseInt("-FF", 16))
+  println(Integer.parseInt("-FF", 16))//十六进制转换成整数
   println(Integer.parseInt("100", 2))
 
+  println("======================")
 
   import StringUtils._
   println("11".toIntRadix(2))
