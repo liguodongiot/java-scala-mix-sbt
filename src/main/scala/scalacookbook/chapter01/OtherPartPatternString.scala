@@ -27,8 +27,8 @@ object OtherPartPatternString {
         "movies near boulder, co",
         "movies near boulder, colorado")
 
-    array.foreach(textUserTyped =>
 
+    array.foreach(textUserTyped =>
       textUserTyped match {
         case MoviesZipRE(zip) => getSearchResults(zip)
         case MoviesNearCityStateRE(city, state) => getSearchResults(city, state)

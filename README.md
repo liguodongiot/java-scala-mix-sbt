@@ -51,24 +51,37 @@ toChar
 ```
 
 
-#### 1.6. Finding Patterns in Strings
-
+#### 1.6. Finding Patterns in Strings（找到符合条件的匹配）
 **PatternString**
+```
+r
+findFirstIn
+findAllIn
+```
 
-#### 1.7. Replacing Patterns in Strings
-
+#### 1.7. Replacing Patterns in Strings（将匹配结果进行替换）
 **ReplacePatternString**
+```
+replaceAll
+replaceAllIn
+replaceFirst
+replaceFirstIn
+```
 
 #### 1.8. Extracting Parts of a String That Match Patterns
-
 **OtherPartPatternString**
+```
+the regex groups
+```
 
-#### 1.9. Accessing a Character in a String
-
+#### 1.9. Accessing a Character in a String（访问字符串的某个字符）
 **AccessCharFromString**
+```
+charAt
+apply
+```
 
 #### 1.10. Add Your Own Methods to the String Class
-
 **AddOwnMethodInString**
 
 **AddOwnMethodInString2**
