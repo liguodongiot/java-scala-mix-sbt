@@ -41,12 +41,12 @@ object ParseNumFromString extends App{
   println(Integer.parseInt("100", 2))
 
   println("======================")
-
+  println("字符串里面新增转换方法，隐式转换。")
   import StringUtils._
   println("11".toIntRadix(2))
   println("100".toIntRadix(16))
 
-  //def toInt: Int         = java.lang.Integer.parseInt(toString)
+  //def toInt: Int = java.lang.Integer.parseInt(toString)
   println("100".toInt)
 
 
@@ -56,7 +56,7 @@ object ParseNumFromString extends App{
   val aString = "100"
 
   toIntException(aString) match {
-    case Some(n) => println(n)
+    case Some(n) => println("toIntException:"+n)
     case None => println("Boom! That wasn't a number.")
   }
 
@@ -75,7 +75,6 @@ object StringUtils{
   implicit class StringToInt(s: String) {
     //因为String中已经有toInt方法了，因此，不能再写成toInt方法
     def toIntRadix(radix: Int) = Integer.parseInt(s, radix)
-
   }
 
   def toIntException(s: String):Option[Int] = {

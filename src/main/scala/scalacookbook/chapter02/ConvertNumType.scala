@@ -14,7 +14,7 @@ object ConvertNumType extends App{
 
   val a = 1000L
 
-
+  //如果想避免潜在的转换错误，可以先判断是否可以转换。
   println(a.isValidByte)
   println(a.isValidShort)
 

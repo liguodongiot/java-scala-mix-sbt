@@ -110,15 +110,22 @@ toFloat
 toLong
 toShort
 toByte
+getOrElse
+Integer.parseInt
 ```
 
-#### 2.2. Converting Between Numeric Types (Casting)
-
+#### 2.2. Converting Between Numeric Types (Casting)（数值类型之间的转换）
 **ConvertNumType**
+```
+isValidByte
+isValidShort
+```
 
-#### 2.3. Overriding the Default Numeric Type
-
+#### 2.3. Overriding the Default Numeric Type（改变默认的数值类型）
 **OverrideDefaultNum**
+```
+
+```
 
 #### 2.4. Replacements for ++ and −−
 
