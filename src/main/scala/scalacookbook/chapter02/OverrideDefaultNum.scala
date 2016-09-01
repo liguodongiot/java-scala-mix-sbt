@@ -41,17 +41,14 @@ object OverrideDefaultNum extends App{
   val s = "Dave"
   val p = s: Object
 
-
   // general case
   //var [name]:[Type] = [initial value]
-
   // example
   var a:Short = 0
 
-
-
   var name = null.asInstanceOf[String]
   println(name)
+
 }
 
 class Foo {

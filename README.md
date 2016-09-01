@@ -124,16 +124,21 @@ isValidShort
 #### 2.3. Overriding the Default Numeric Type（改变默认的数值类型）
 **OverrideDefaultNum**
 ```
-
+general case
+var [name]:[Type] = [initial value]
 ```
 
 #### 2.4. Replacements for ++ and −−
-
 **ReplacementsPlusMinus**
+```
+Scala中并没有提供++和--运算符
+```
 
-#### 2.5. Comparing Floating-Point Numbers
-
+#### 2.5. Comparing Floating-Point Numbers（比较浮点数）
 **CompareFloatPointNum**
+```
+自定义约等于 ~= 方法
+```
 
 #### 2.6. Handling Very Large Numbers
 
