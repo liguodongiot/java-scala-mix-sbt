@@ -4,11 +4,12 @@ package scalacookbook.chapter02
  * Created by liguodong on 2016/6/12.
  */
 object OverrideDefaultNum extends App{
-  //default
-  val a1 = 1d
+
+  //default   默认是int型
+  val a1 = 1
 
   //override simple numeric types
-  val a2 = 1d
+  val a2 = 1d //重写成Double类型
   val a3 = 1f
   val a4 = 1000L
 
@@ -29,8 +30,13 @@ object OverrideDefaultNum extends App{
 
   //You can create hex values by preceding the number with a leading 0x or 0X
   val a13 = 0x20
+
   // if you want to store the value as a Long
   val a14 = 0x20L
+
+  println(a14)
+
+  println("强转换："+a14.asInstanceOf[Double])
 
   val s = "Dave"
   val p = s: Object
