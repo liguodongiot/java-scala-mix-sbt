@@ -27,7 +27,7 @@ object CompareFloatPointNum {
     println(a ~= b)
 
     //或者 add the same method to a utilities object
-    println(MathUtils.~=(a, b, 0.000001))
+    println(MathUtils.~=(a, b, 0.000001))  //不是一种好的方式
 
 
   }

@@ -6,9 +6,9 @@ package scalacookbook.chapter03
 object LoopWithForAndForeach extends App{
 
   val a = Array("apple", "banana", "orange")
-
   for (e <- a) println(e)
-  println("~~~~~~~~")
+
+  println("=================")
 
   //Returning values from a for loop
   for (e <- a) {
@@ -16,11 +16,11 @@ object LoopWithForAndForeach extends App{
     val s = e.toUpperCase
     println(s)
   }
+  println("=================")
 
   val newArray = for (e <- a) yield e.toUpperCase
 
-
-  println(newArray(0))
+  println("newArray(0) : "+newArray(0))
 
   for(i<-newArray) println(i)
 
@@ -31,10 +31,11 @@ object LoopWithForAndForeach extends App{
     s
   }
 
+  newArray2.map(_+" ").foreach(print)
+
   println
+
   //for loop counters
-
-
   for (i <- 0 until a.length) {
     println(s"$i is ${a(i)}")
   }
@@ -47,7 +48,7 @@ object LoopWithForAndForeach extends App{
   //Generators and guards
   for (i <- 1 to 3) println(i)
 
-  1 to 3
+  println(1 to 3)
 
   for (i <- 1 to 10 if i % 4==0) println(i)
 
@@ -62,15 +63,17 @@ object LoopWithForAndForeach extends App{
   a.foreach(println)
 
 
+  println("------before------")
   //before
   a.foreach { e =>
     val s = e.toUpperCase
     println(s)
   }
-
+  println("------after------")
   //after
   a.foreach(e => println(e.toUpperCase))
 
+  println("循环遍历集合转化成foreach遍历集合")
 
   // original List code
   val nums = List(1,2,3)
@@ -85,7 +88,7 @@ object LoopWithForAndForeach extends App{
   // #1 - compiler output
   1.to(10).foreach(((i) => println(i)))
 
-
+  println("~~~~~~~~~~~~~")
 
   // #2 - input code
   for {
@@ -94,7 +97,6 @@ object LoopWithForAndForeach extends App{
   } println(i)
 
   // #2 - translated output
-
   1.to(10).withFilter(i=>i%2==0).foreach(((i) =>
     println(i)))
 

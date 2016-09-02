@@ -8,7 +8,6 @@ class Person
 
 object UseIfATernaryOperator extends App{
   val a = -1
-
   val absValue = if (a < 0) -a else a
 
   var i = 0

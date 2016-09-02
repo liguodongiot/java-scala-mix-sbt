@@ -7,29 +7,34 @@ package scalacookbook.chapter03
 
 object UsePatternMatchInMatchExpression extends App{
 
-  case class Person(firstName: String, lastName: String)
-  case class Dog(name: String)
-
+  //常量
   // trigger the constant patterns
   println(echoWhatYouGaveMe(0))
   println(echoWhatYouGaveMe(true))
   println(echoWhatYouGaveMe("hello"))
   println(echoWhatYouGaveMe(Nil))
 
+  //序列
   // trigger the sequence patterns
   println(echoWhatYouGaveMe(List(0,1,2)))
   println(echoWhatYouGaveMe(List(1,2)))
   println(echoWhatYouGaveMe(List(1,2,3)))
   println(echoWhatYouGaveMe(Vector(1,2,3)))
 
+  //元组
   // trigger the tuple patterns
   println(echoWhatYouGaveMe((1,2))) // two element tuple
   println(echoWhatYouGaveMe((1,2,3))) // three element
 
+  case class Person(firstName: String, lastName: String)
+  case class Dog(name: String)
+
+  //构造函数
   // trigger the constructor patterns
   println(echoWhatYouGaveMe(Person("Melissa", "Alexander")))
   println(echoWhatYouGaveMe(Dog("Suka")))
 
+  //类型
   // trigger the typed patterns
   println(echoWhatYouGaveMe("Hello, world"))
   println(echoWhatYouGaveMe(42))
@@ -39,6 +44,8 @@ object UsePatternMatchInMatchExpression extends App{
   println(echoWhatYouGaveMe(Dog("Fido")))
   println(echoWhatYouGaveMe(List("apple", "banana")))
   println(echoWhatYouGaveMe(Map(1->"Al", 2->"Alexander")))
+
+  //通配符
   // trigger the wildcard pattern
   println(echoWhatYouGaveMe("33d"))
 
@@ -73,11 +80,13 @@ object UsePatternMatchInMatchExpression extends App{
     case d: Dog => s"dog: ${d.name}"
     case list: List[_] => s"thanks for the List: $list"
     case m: Map[_, _] => m.toString
+
     // the default wildcard pattern
     case _ => "Unknown"
+
   }
 
-
+  //二者等价
   //similar
   /*
   case list: List[_] => s"thanks for the List: $list"
@@ -90,14 +99,16 @@ object UsePatternMatchInMatchExpression extends App{
   */
 
 
-  /////////////////////Discussion//////////////////////
+  println("/////////////////////Discussion//////////////////////")
+  import section11._
+
   val test = new RandomNoiseMaker
   test.makeRandomNoise(RandomString("liguodong"))
 
 
   //Adding variables to patterns
   //variableName @ pattern
-
+  //在模式中增加一个变量
   def matchType(x: Any): String = x match {
     //case x: List(1, _*) => s"$x" // doesn't compile
 
@@ -130,15 +141,21 @@ object UsePatternMatchInMatchExpression extends App{
 
 }
 
-import java.io.File
-sealed trait RandomThing
-case class RandomFile(f: File) extends RandomThing
-case class RandomString(s: String) extends RandomThing
+package section11{
 
-class RandomNoiseMaker {
-  def makeRandomNoise(t: RandomThing) = t match {
-    case RandomFile(f) => println("playSoundFile(f)")//playSoundFile(f)
-    case RandomString(s) => println("speak(s)")//speak(s)
+  import java.io.File
+
+  sealed trait RandomThing
+  case class RandomFile(f: File) extends RandomThing
+  case class RandomString(s: String) extends RandomThing
+
+  class RandomNoiseMaker {
+    def makeRandomNoise(t: RandomThing) = t match {
+      case RandomFile(f) => println("playSoundFile(f)")//playSoundFile(f)
+      case RandomString(s) => println("speak(s)")//speak(s)
+    }
   }
+
 }
+
 

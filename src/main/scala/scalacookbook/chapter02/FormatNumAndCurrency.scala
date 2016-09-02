@@ -9,20 +9,20 @@ object FormatNumAndCurrency extends App{
   println(f"$pi%1.5f")
   println(f"$pi%1.2f")
 
-
   println(f"$pi%06.2f")
+  //scala2.10之前
   println("%06.2f".format(pi))
 
 
-  //A simple way to add commas is to use the getIntegerInstance method of the
+  //A simple way to add commas（逗号） is to use the getIntegerInstance method of the
   //java.text.NumberFormat class
   val formatter = java.text.NumberFormat.getIntegerInstance
 
   println(formatter.format(10000))
 
-
   println(formatter.format(1000000))
 
+  //从语言和国家构建语言环境
   //You can also set a locale with the getIntegerInstance method:
   val locale = new java.util.Locale("de", "DE")
   println(locale)
@@ -34,7 +34,7 @@ object FormatNumAndCurrency extends App{
   val formatter3 = java.text.NumberFormat.getInstance
   println(formatter3.format(10000.33))
 
-
+  //货币输出
   //For currency output, use the getCurrencyInstance formatter
   val formatter4 = java.text.NumberFormat.getCurrencyInstance
   println(formatter4.format(123.456789))
@@ -42,7 +42,7 @@ object FormatNumAndCurrency extends App{
   println(formatter4.format(12345.6789))
   println(formatter4.format(123456.789))
 
-
+  //处理国际货币
   //This approach handles international currency
   import java.util.{Currency, Locale}
   val de = Currency.getInstance(new Locale("de", "DE"))

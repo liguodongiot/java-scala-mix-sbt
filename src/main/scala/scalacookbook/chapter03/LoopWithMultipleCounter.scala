@@ -22,7 +22,7 @@ object LoopWithMultipleCounter extends App{
     k <- 1 to 10
   } println(s"i = $i, j = $j, k = $k")
 
-
+  //创建多个维度的数组
   // This is useful when looping over a multidimensional array.
   // Assuming you create a small two-dimensional array like this:
   val array = Array.ofDim[Int](2,2)

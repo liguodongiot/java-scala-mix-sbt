@@ -24,7 +24,6 @@ object UseMatchExpression extends App{
     // catch the default with a variable so you can print it
     case whoa => println("Unexpected case: " + whoa.toString)
   }
-
   println(ret)
 
   val month = i match {
@@ -42,15 +41,20 @@ object UseMatchExpression extends App{
     case 12 => "December"
     case _ => "Invalid month" // the default, catch-all
   }
-
   println(month)
 
+  println("----------使用 @switch注解-------------")
   //The @switch annotation
   val switchDemo = new SwitchDemo
   println(switchDemo.x)
 
   val switchDemo2 = new SwitchDemo2
   println(switchDemo2.x)
+
+  //如果@switch注解存在，编译器将确保match被编译成一个tableswitch或lookupswitch，
+  //如果它编译成一系列的条件表达式，将发出一个错误。”
+
+  println("----------------")
 
   def getClassAsString(x: Any): String = x match {
     case s: String => s + " is a String"
@@ -65,10 +69,10 @@ object UseMatchExpression extends App{
 
   //Handling the default case
   //case _ => println("Got a default match")
-  //case default => println(default)
-  //case oops => println(oops)
+  //case default => println(default)   //可读性
+  //case oops => println(oops)    //任何合法的变量名
 
-
+  //当匹配不成功时，也可以不进行相应的处理
   //You can generate a MatchError if you don’t handle the default case
   i=0
   i match {
@@ -110,7 +114,7 @@ class SwitchDemo {
 
 // Version 2 - leads to a compiler warning
 class SwitchDemo2 {
-  val i = 1
+  val i = 2
   val Two = 2 // added
   val x = (i: @switch) match {
       case 1 => "One"

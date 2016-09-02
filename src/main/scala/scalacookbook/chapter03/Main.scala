@@ -5,6 +5,7 @@ package scalacookbook.chapter03
  */
 
 object Main extends App{
+
   //val x = if (a) y else z
   val nieces = List("emily", "hannah", "mercedes", "porsche")
   println(nieces)

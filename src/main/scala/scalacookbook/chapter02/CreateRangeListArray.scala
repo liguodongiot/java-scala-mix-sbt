@@ -35,4 +35,9 @@ object CreateRangeListArray extends App{
   for (i <- 1 to 5) yield println(i * 2 +" ")
 
   for (i <- 1 to 5) yield println(i.toDouble+" ")
+
+  xList2.map(_*2+":").foreach(print)
+
+
+
 }

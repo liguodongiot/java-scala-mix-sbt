@@ -140,76 +140,116 @@ Scala中并没有提供++和--运算符
 自定义约等于 ~= 方法
 ```
 
-#### 2.6. Handling Very Large Numbers
-
+#### 2.6. Handling Very Large Numbers（处理大数）
 **HandleLargeNum**
+```
+BigInt
+BigDecimal
+toLong
+isValidByte
+PositiveInfinity    正无穷大
+NegativeInfinity    负无穷大
+```
 
-#### 2.7. Generating Random Numbers
-
+#### 2.7. Generating Random Numbers（生成随机数）
 **GenerateRandomNum**
+```
+scala.util.Random
+nextInt
+nextDouble
+nextPrintableChar
+```
 
 #### 2.8. Creating a Range, List, or Array of Numbers
-
 **CreateRangeListArray**
+```
+1 to 10 by 2
+1 to 5
+1 until 5
+toArray
+toList
+```
 
-#### 2.9. Formatting Numbers and Currency
-
+#### 2.9. Formatting Numbers and Currency（格式化数值和控制小数点位置）
 **FormatNumAndCurrency**
-
+```
+scala.math.Pi
+java.text.NumberFormat.getIntegerInstance（增加逗号）
+```
 
 ### CHAPTER 3 Control Structures
 
-Introduction
-
+#### Introduction
 **Main**
+```
+capitalize（首字母大写）
+```
 
-#### 3.1. Looping with for and foreach
-
+#### 3.1. Looping with for and foreach（循环）
 **LoopWithForAndForeach**
+```
+Array
+toUpperCase
+zipWithIndex
+```
 
-#### 3.2. Using for Loops with Multiple Counters
-
+#### 3.2. Using for Loops with Multiple Counters（多个计数器的循环）
 **LoopWithMultipleCounter**
+```
+Array.ofDim
+```
 
-#### 3.3. Using a for Loop with Embedded if Statements(Guards)
-
+#### 3.3. Using a for Loop with Embedded if Statements(Guards)（for循环里面嵌入if语句）
 **LoopWithEmbeddedStatements**
 
 #### 3.4. Creating a for Comprehension (for/yield Combination)
-
 **CreateComprehension**
+```
+for yield
+```
 
-#### 3.5. Implementing break and continue
-
+#### 3.5. Implementing break and continue（实现break和continue）
 **ImplBreakAndContinue**
+```
+scala.util.control.Breaks
+尾递归
+```
 
-#### 3.6. Using the if Construct Like a Ternary Operator
-
+#### 3.6. Using the if Construct Like a Ternary Operator（使用if结构像三元运算符一样）
 **UseIfATernaryOperator**
 
-#### 3.7. Using a Match Expression Like a switch Statement Problem
-
+#### 3.7. Using a Match Expression Like a switch Statement Problem（使用匹配表达式像Java的switch语句）
 **UseMatchExpression**
+```
+match   case
+@switch
+```
 
 #### 3.8. Matching Multiple Conditions with One Case Statement（多个条件匹配一个case）
-
 **MatchMultipleConditions**
 
 #### 3.9. Assigning the Result of a Match Expression to a Variable（将匹配表达式结果赋值给变量）
-
 **MatchExpressionToVariable**
 
-#### 3.10. Accessing the Value of the Default Case in a Match Expression（在匹配表达式中访问默认情况的值）
-
+#### 3.10. Accessing the Value of the Default Case in a Match Expression（在匹配表达式中访问未匹配到[默认]的情况的值）
 **AccessDefaultValueInMatchExpression**
 
-#### 3.11. Using Pattern Matching in Match Expressions
-
+#### 3.11. Using Pattern Matching in Match Expressions（在匹配表达式中使用模式匹配）
 **UsePatternMatchInMatchExpression**
+```
+常量
+List、Vector
+tuple
+case class
 
-#### 3.12. Using Case Classes in Match Expressions
+在模式中增加变量
+```
 
+
+#### 3.12. Using Case Classes in Match Expressions（在匹配表达式中使用case class / case object）
 **UseCaseClassInMatchExpression**
+```
+```
 
 #### 3.13. Adding if Expressions (Guards) to Case Statements（在case中增加if表达式）
 

@@ -4,13 +4,9 @@ package scalacookbook.chapter03
  * Created by liguodong on 2016/6/28.
  */
 
-trait Animal
-case class Dog(name: String) extends Animal
-case class Cat(name: String) extends Animal
-case object Woodpecker extends Animal
-
-
 object UseCaseClassInMatchExpression extends App{
+
+  import section12._
 
   def determineType(x: Animal): String = x match {
     case Dog(moniker) => "Got a Dog, name = " + moniker
@@ -25,5 +21,12 @@ object UseCaseClassInMatchExpression extends App{
   println(determineType(Woodpecker))
 
 
+}
+
+package section12{
+  trait Animal
+  case class Dog(name: String) extends Animal
+  case class Cat(name: String) extends Animal
+  case object Woodpecker extends Animal
 
 }
