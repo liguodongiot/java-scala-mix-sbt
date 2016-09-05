@@ -8,7 +8,6 @@ object AssignFieldBlockFunction extends App{
   val f = new Foo
 
 
-
 }
 
 class Foo {
@@ -25,11 +24,10 @@ class Foo {
 
   println(text)
 
-
   //Discussion
   val fDis = new FooDis
-
 }
+
 class FooXML {
 
   import scala.xml.XML

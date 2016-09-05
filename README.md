@@ -269,26 +269,20 @@ case class
 #### 3.18. Creating Your Own Control Structures（创建自己的控制结构）
 **CreateYourOwnControlStructure**
 
-
 ### CHAPTER 4 Classes and Properties（类和属性）
 
 #### Introduction
 
 #### 4.1. Creating a Primary Constructor（创建一个主构造器）
-
 **CreatePrimaryConstructor**
 
-
 #### 4.2. Controlling the Visibility of Constructor Fields（控制构造函数属性的可见性）
-
 **ControlVisibilityConstructorFields**
 
 #### 4.3. Defining Auxiliary Constructors(定义辅助构造函数)
-
 **DefineAuxiliaryConstructor**
 
 #### 4.4. Defining a Private Primary Constructor
-
 **DefinePrivatePrimaryConstructor**
 
 #### 4.5. Providing Default Values for Constructor Parameters（为构造函数参数提供默认值）

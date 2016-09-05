@@ -3,20 +3,24 @@ package scalacookbook.chapter04
 /**
  * Created by liguodong on 2016/6/30.
  */
+
 object ControlVisibilityConstructorFields extends App{
+
   class PersonVar(var name: String)
 
+  //拥有set和get
   //////var fields//////
   val pr = new PersonVar("Alvin Alexander")
 
   // getter
-  pr.name
+  println(pr.name)
 
   // setter
   pr.name = "Fred Flintstone"
 
-  pr.name
+  println(pr.name)
 
+  //只有get
   //////val fields//////
   class PersonVal(val name: String)
 
@@ -24,6 +28,7 @@ object ControlVisibilityConstructorFields extends App{
   pl.name
   //pl.name = "Fred Flintstone"
 
+  //没有set和get
   ///////Fields without val or var///////
   class Person(name: String)
   val p = new Person("Alvin Alexander")
@@ -38,16 +43,16 @@ object ControlVisibilityConstructorFields extends App{
   pp.getName
 
 
-
+  println("/////////////////////////")
   //Discussion
 
   //Case classes
   //case class 和 class 规则不同
-  //Case class constructor parameters are val by default.
-  //So if you define a case class field without adding val or var
+  //case class 构造器参数默认是val
+  //因此，如果定义了一个case class的属性不用增加val或var
   case class PersonCC(name: String)
   val pcc = PersonCC("Dale Cooper")
-  pcc.name
+  println(pcc.name)
 
 }
 

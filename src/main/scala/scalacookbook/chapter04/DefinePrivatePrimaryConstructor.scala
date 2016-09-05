@@ -3,6 +3,7 @@ package scalacookbook.chapter04
 /**
  * Created by liguodong on 2016/6/30.
  */
+
 object DefinePrivatePrimaryConstructor extends App{
 
   class PersonPri private (name: String)
