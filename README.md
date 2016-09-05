@@ -282,20 +282,28 @@ case class
 #### 4.3. Defining Auxiliary Constructors(定义辅助构造函数)
 **DefineAuxiliaryConstructor**
 
-#### 4.4. Defining a Private Primary Constructor
+#### 4.4. Defining a Private Primary Constructor（定义一个私有主构造器）
 **DefinePrivatePrimaryConstructor**
+```
+单例模式
+```
 
 #### 4.5. Providing Default Values for Constructor Parameters（为构造函数参数提供默认值）
-
 **ProvideDefaultValueForConstructParam**
 
 
 #### 4.6. Overriding Default Accessors and Mutators（重写默认的访问器和修改器 getter or setter）
-
 **OverrideDefaultAccessorsMutators**
+```
+重写默认的setter和getter方法的秘诀：
+1、创建一个私有构造参数，写一个你希望在类中引用的名称。（常见的方法是在参数名前面添加一个下划线）
+2、定义一个你想其他类使用的getter和setter名
+3、按需修改getter和setter方法
 
-#### 4.7. Preventing Getter and Setter Methods from Being Generated
+注意：设置属性私有非常重要。
+```
 
+#### 4.7. Preventing Getter and Setter Methods from Being Generated（阻止Getter和Setter的生成）
 **PreventGetSetGenerated**
 
 

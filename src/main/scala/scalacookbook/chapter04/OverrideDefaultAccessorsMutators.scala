@@ -14,7 +14,9 @@ object OverrideDefaultAccessorsMutators extends App{
     def name_=(aName: String) { name = aName }
   }
   */
+  //因为主构造器参数和getter方法都被命名为name
 
+  //private (or private[this])
   //常见的方法是在参数名前面添加一个下划线
   class Person(private var _name: String) {
     //然后根据Scala规定声明getter和setter方法
@@ -38,8 +40,15 @@ object OverrideDefaultAccessorsMutators extends App{
   //    public Stock(java.lang.String);
   //  }
 
+
+  // the Scala compiler generated two methods:
+  // a getter named symbol and a setter named symbol_$eq.
+
+
   //symbol_$eq  <====> symbol_=
   //stock.symbol = "GOOG" <====> stock.symbol_$eq("GOOG")
+
+
 
 }
 
