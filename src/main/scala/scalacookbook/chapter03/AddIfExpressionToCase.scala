@@ -4,8 +4,6 @@ package scalacookbook.chapter03
  * Created by liguodong on 2016/6/28.
  */
 
-
-
 object AddIfExpressionToCase extends App{
 
   val i =1
@@ -49,5 +47,13 @@ object AddIfExpressionToCase extends App{
   else if (name == "Bam Bam") println("Bam bam!")
   */
 
+  def speakDis(p: Person) = p match {
+    case Person(name) =>
+      if (name == "Fred") println("Yubba dubba doo")
+      else if (name == "Bam Bam") println("Bam bam!")
+  }
+
+  speakDis(Person("Fred"))
+  speakDis(Person("Bam Bam"))
 }
 

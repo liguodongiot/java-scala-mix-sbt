@@ -3,6 +3,7 @@ package scalacookbook.chapter03
 /**
  * Created by liguodong on 2016/6/28.
  */
+
 object WorkWithListInMatchExpression extends App{
 
   //create a List
@@ -17,8 +18,8 @@ object WorkWithListInMatchExpression extends App{
   }
 
   val fruits = "Apples" :: "Bananas" :: "Oranges" :: Nil
-  listToString(fruits)
-
+  val prints  = listToString(fruits)
+  println("递归遍历：" + prints)
 
   def sum(list: List[Int]): Int = list match {
     case Nil => 1

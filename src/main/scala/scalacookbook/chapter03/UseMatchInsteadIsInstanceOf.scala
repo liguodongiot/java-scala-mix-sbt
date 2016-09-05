@@ -5,6 +5,9 @@ package scalacookbook.chapter03
  */
 object UseMatchInsteadIsInstanceOf {
 
+  // use the isInstanceOf method to test the type of an object
+  // if (x.isInstanceOf[Foo]) { do something ...
+
   def isPerson(x: Any): Boolean = x match {
     case p: Person => true
     case _ => false
@@ -21,6 +24,9 @@ object UseMatchInsteadIsInstanceOf {
     case Person(name, age) => // handle the Person
     case Dog(name) => // handle the Dog
   }
+
+  //with more complex needs, a match expression is more readable
+  // than an if/else statement.
 
 
 }

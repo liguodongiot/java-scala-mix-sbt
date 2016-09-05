@@ -245,36 +245,28 @@ case class
 在模式中增加变量
 ```
 
-
 #### 3.12. Using Case Classes in Match Expressions（在匹配表达式中使用case class / case object）
 **UseCaseClassInMatchExpression**
-```
-```
 
 #### 3.13. Adding if Expressions (Guards) to Case Statements（在case中增加if表达式）
-
 **AddIfExpressionToCase**
 
-#### 3.14. Using a Match Expression Instead of isInstanceOf
-
+#### 3.14. Using a Match Expression Instead of isInstanceOf（使用匹配表达式代替isInstanceOf）
 **UseMatchInsteadIsInstanceOf**
+```
+在复杂的操作时，匹配表达式比if/else语句更具有可读性
+```
 
-#### 3.15. Working with a List in a Match Expression
-
+#### 3.15. Working with a List in a Match Expression（在匹配表达式中使用List）
 **WorkWithListInMatchExpression**
 
-#### 3.16. Matching One or More Exceptions with try/catch
-
+#### 3.16. Matching One or More Exceptions with try/catch（在try/catch中匹配一个或多个异常）
 **MatchOneOrMoreException**
 
-
-#### 3.17. Declaring a Variable Before Using It in a try/catch/finally Block
-
+#### 3.17. Declaring a Variable Before Using It in a try/catch/finally Block（在try/catch/finally前面声明一个变量）
 **DeclareVariableBeforeUseBlock**
 
-
-#### 3.18. Creating Your Own Control Structures
-
+#### 3.18. Creating Your Own Control Structures（创建自己的控制结构）
 **CreateYourOwnControlStructure**
 
 

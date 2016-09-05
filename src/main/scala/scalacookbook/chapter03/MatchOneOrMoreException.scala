@@ -8,6 +8,7 @@ import java.io.{IOException, FileNotFoundException}
 object MatchOneOrMoreException extends App{
 
   val s = "Foo"
+  //一个
   try {
     val i = s.toInt
   } catch {
@@ -18,6 +19,7 @@ object MatchOneOrMoreException extends App{
     println("this is a test method...")
   }
 
+  //多个
   try {
     openAndReadAFile("test")
   } catch {
@@ -27,12 +29,14 @@ object MatchOneOrMoreException extends App{
 
   //Discussion
 
+  //不关心具体的，捕获所有的异常。
   try {
     openAndReadAFile("foo")
   } catch {
     case t: Throwable => t.printStackTrace()
   }
 
+  //捕获所有异常，然后忽略他们。
   //You can also catch them all and ignore them like this:
   try {
     val i = s.toInt

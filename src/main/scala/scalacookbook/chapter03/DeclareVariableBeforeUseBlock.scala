@@ -44,6 +44,4 @@ object DeclareVariableBeforeUseBlock extends App{
     if (out.isDefined) out.get.close
   }
 
-
-
 }
