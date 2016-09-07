@@ -5,39 +5,44 @@ package scalacookbook.chapter04
  */
 object AssignFieldBlockFunction extends App{
 
+  import section08._
   val f = new Foo
 
-
-}
-
-class Foo {
-  // set 'text' equal to the result of the block of code
-  val text = {
-    var lines = ""
-    try {
-      lines = io.Source.fromFile("D:\\lilili.txt").getLines.mkString
-    } catch {
-      case e: Exception => lines = "Error happened"
-    }
-    lines
-  }
-
-  println(text)
+  //val fXml = new  FooXML
 
   //Discussion
   val fDis = new FooDis
 }
 
-class FooXML {
+package section08{
+  class Foo {
+    // set 'text' equal to the result of the block of code
+    val text = {
+      var lines = ""
+      try {
+        lines = io.Source.fromFile("D:\\lilili.txt").getLines.mkString
+      } catch {
+        case e: Exception => lines = "Error happened"
+      }
+      lines
+    }
 
-  import scala.xml.XML
-  // assign the xml field to the result of the load method
-  val xml = XML.load("http://example.com/foo.xml")
-  // more code here ...
+    println(text)
+  }
+
+  class FooXML {
+
+    import scala.xml.XML
+    // assign the xml field to the result of the load method
+    val xml = XML.load("http://example.com/foo.xml")
+    // more code here ...
+  }
+
+  //ignore the potential for errors and shorten the class to this
+  class FooDis {
+    val text =
+      io.Source.fromFile("D:\\lilili.txt").getLines.foreach(println)
+  }
+
 }
 
-//ignore the potential for errors and shorten the class to this
-class FooDis {
-  val text =
-    io.Source.fromFile("D:\\lilili.txt").getLines.foreach(println)
-}

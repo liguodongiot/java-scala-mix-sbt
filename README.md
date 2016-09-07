@@ -305,23 +305,24 @@ case class
 
 #### 4.7. Preventing Getter and Setter Methods from Being Generated（阻止Getter和Setter的生成）
 **PreventGetSetGenerated**
-
+```
+定义成var，将会自动生成setter和getter
+定义成val，将会自动生成getter
+定义成private或private[this] 将会保持这个属性对其他类隐藏
+```
 
 #### 4.8. Assigning a Field to a Block or Function（块或函数指定一个属性）
-
 **AssignFieldBlockFunction**
 
 #### 4.9. Setting Uninitialized var Field Types（设置初始化变量类型）
-
 **SetUninitializedField**
 
-#### 4.10. Handling Constructor Parameters When Extending a Class
-
+#### 4.10. Handling Constructor Parameters When Extending a Class（在扩展一个类时，处理构造函数的参数）
 **HandleConstructParam**
 
-#### 4.11. Calling a Superclass Constructor
-
+#### 4.11. Calling a Superclass Constructor（调用父类构造函数）
 **CallSuperclassConstructor**
+
 
 #### 4.12. When to Use an Abstract Class
 

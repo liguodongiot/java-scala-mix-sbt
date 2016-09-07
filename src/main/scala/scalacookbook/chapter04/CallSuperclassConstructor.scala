@@ -5,6 +5,15 @@ package scalacookbook.chapter04
  */
 object CallSuperclassConstructor extends App{
 
+  //the Dog class is defined to call the primary constructor of the Animal class,
+  //which is a one-arg constructor that takes name as its parameter
+  class AnimalOne (var name: String) {
+    // ...
+  }
+  class DogOne (name: String) extends AnimalOne (name) {
+    // ...
+  }
+
   // (1) primary constructor
   class Animal (var name: String, var age: Int) {
     // (2) auxiliary constructor

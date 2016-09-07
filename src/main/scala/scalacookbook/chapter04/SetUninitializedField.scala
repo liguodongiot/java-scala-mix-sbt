@@ -14,8 +14,6 @@ object SetUninitializedField extends App{
 
   case class Address(city: String, state: String, zip: String)
 
-
-
   val p = Person("alvinalexander", "secret")
 
   p.address = Some(Address("Talkeetna", "AK", "99676"))
@@ -36,8 +34,6 @@ object SetUninitializedField extends App{
   var f: Float = 0
   var l: Long = 0
   var s: Short = 0
-
-
 
 }
 
