@@ -29,7 +29,7 @@ object GenerateBoilerplateCode extends App{
   c.name = "Valley Programming"
   println(c.name)
 
-  println(emily)
+  println("Emily : "+emily)
 
   //an unapply method is automatically created for a case class, it works well when
   //you need to extract information in match expressions
@@ -49,6 +49,7 @@ object GenerateBoilerplateCode extends App{
   val fred = Employee("Fred", "Anchorage", "Salesman")
   println(fred)
 
+  //克隆对象
   val joe = fred.copy(name="Joe", role="Mechanic")
   println(joe)
 

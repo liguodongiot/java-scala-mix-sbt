@@ -323,27 +323,35 @@ case class
 #### 4.11. Calling a Superclass Constructor（调用父类构造函数）
 **CallSuperclassConstructor**
 
-
-#### 4.12. When to Use an Abstract Class
-
+#### 4.12. When to Use an Abstract Class（使用一个抽象类）
 **UseAbstractClass**
+```
+两个原因使用抽象类:
+1、创建一个基类有构造参数（特质不允许有构造参数）
+2、代码将从Java代码中调用
+```
 
-#### 4.13. Defining Properties in an Abstract Base Class (or Trait)
-
+#### 4.13. Defining Properties in an Abstract Base Class (or Trait)（在一个抽象类或者特质中定义属性）
 **DefinePropertiesAbstractBaseClass**
 
 #### 4.14. Generating Boilerplate Code with Case Classes（Case Class自动生成样板代码）
-
 **GenerateBoilerplateCode**
 
-#### 4.15. Defining an equals Method (Object Equality)
-
+#### 4.15. Defining an equals Method (Object Equality)（定义equals方法）
 **DefineEqualMethod**
+```
+在scala中，== 比较两个 对象相等。
+在java中，== 比较两个 引用相等。
+Scala中， ==是一个方法，你可以使用它比较每一个类的两个实例。他会在底层调用equals方法。
+```
 
 #### 4.16. Creating Inner Classes
-
 **CreateInnerClass**
-
+```
+java和scala内部类是不同的。
+java内部类属于类
+scala内部类属于对象
+```
 
 ### CHAPTER 5 Methods（方法）
 

@@ -4,17 +4,24 @@ package scalacookbook.chapter04
  * Created by liguodong on 2016/6/30.
  */
 object CreateInnerClass extends App{
+
+  import section16._
+
   val p = new PandorasBox
   p.things.foreach(println)
 
   p.addThing("Evil Thing #3")
   p.addThing("Evil Thing #4")
 
-  println("~~~~~~~~~~~~~")
+  println("-------------")
+
   p.things.foreach(println)
 
-
   println("=============")
+  //java和scala内部类是不同的。
+  //java内部类属于类
+  //scala内部类属于对象
+
   // inner classes are bound to the object
   val oc1 = new Outer
   val oc2 = new Outer
@@ -24,48 +31,55 @@ object CreateInnerClass extends App{
   ic2.x = 20
 
 
-
   println(s"ic1.x = ${ic1.x}")
   println(s"ic2.x = ${ic2.x}")
 
 
 
   println("----------")
+
+
   //include a class inside an object or an object inside a class
 
   // class inside object(注意括号的位置)
   println(new OuterObject.InnerClass().x)
+
   // object inside class
   println(new OuterClass().InnerObject.y)
 
 }
 
+package section16{
 
+  class PandorasBox {
 
-class PandorasBox {
+    //内部类
+    case class Thing (name: String)
 
-  case class Thing (name: String)
-
-  var things = new collection.mutable.ArrayBuffer[Thing]()
-  things += Thing("Evil Thing #1")
-  things += Thing("Evil Thing #2")
-  def addThing(name: String) { things += new Thing(name) }
-}
-
-
-class Outer {
-  class Inner {
-    var x = 1
+    var things = new collection.mutable.ArrayBuffer[Thing]()
+    things += Thing("Evil Thing #1")
+    things += Thing("Evil Thing #2")
+    def addThing(name: String) { things += new Thing(name) }
   }
+
+
+  class Outer {
+    class Inner {
+      var x = 1
+    }
+  }
+
+  object OuterObject {
+    class InnerClass {
+      var x = 1
+    }
+  }
+  class OuterClass {
+    object InnerObject {
+      val y = 2
+    }
+  }
+
+
 }
 
-object OuterObject {
-  class InnerClass {
-    var x = 1
-  }
-}
-class OuterClass {
-  object InnerObject {
-    val y = 2
-  }
-}

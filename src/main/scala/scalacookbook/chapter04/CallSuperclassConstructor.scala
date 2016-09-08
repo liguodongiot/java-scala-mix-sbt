@@ -14,9 +14,9 @@ object CallSuperclassConstructor extends App{
     // ...
   }
 
-  // (1) primary constructor
+  // (1) primary constructor 主构造器
   class Animal (var name: String, var age: Int) {
-    // (2) auxiliary constructor
+    // (2) auxiliary constructor 辅助构造器
     def this (name: String) {
       this(name, 0)
     }
@@ -24,23 +24,27 @@ object CallSuperclassConstructor extends App{
     override def toString = s"$name is $age years old"
   }
 
+  //子类可以选择调用父类某个构造器
   // calls the Animal one-arg constructor
-  class Dog (name: String) extends Animal (name) {
+  class DogOptionOne (name: String) extends Animal (name) {
     println("Dog constructor called")
   }
 
   // call the two-arg constructor
-  /*class Dog (name: String) extends Animal (name, 0) {
+  class DogOptionTwo (name: String) extends Animal (name, 0) {
     println("Dog constructor called")
-  }*/
+  }
 
 }
 
+//子类主构造函数能够调用任何父类的构造函数。
+//但是，子类的辅助构造函数必须调用本类中先前定义的构造函数。
 object AuxiliaryConstructors{
   case class Address (city: String, state: String)
   case class Role (role: String)
 
   class Person (var name: String, var address: Address) {
+    //辅助构造函数的第一行必须调用另一个构造函数
     // no way for Employee auxiliary constructors to call this constructor
     def this (name: String) {
       this(name, null)
