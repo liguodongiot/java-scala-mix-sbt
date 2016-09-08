@@ -4,7 +4,7 @@ name := "java-scala-mix-sbt"
 
 version := "1.0"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.7"
 
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
@@ -46,4 +46,31 @@ libraryDependencies ++= Seq(
   //,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.10" % "2.1.2"
   ,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2"
 )
+
+
+
+
+
+libraryDependencies := {
+  val spark_version = "2.0.0"
+  CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, scalaMajor)) if scalaMajor == 10 =>
+      libraryDependencies.value ++ Seq(
+        "org.apache.spark" % "spark-core_2.10" % spark_version,
+        "org.apache.spark" % "spark-sql_2.10" % spark_version,
+        "org.apache.spark" % "spark-hive_2.10" % spark_version
+      )
+    case Some((2, scalaMajor)) if scalaMajor == 11 =>
+      libraryDependencies.value ++ Seq(
+        "org.apache.spark" % "spark-core_2.11" % spark_version,
+        "org.apache.spark" % "spark-sql_2.11" % spark_version,
+        "org.apache.spark" % "spark-hive_2.11" % spark_version
+      )
+  }
+}
+
+
+
+
+
 
