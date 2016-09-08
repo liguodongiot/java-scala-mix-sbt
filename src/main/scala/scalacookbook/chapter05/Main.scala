@@ -5,17 +5,18 @@ package scalacookbook.chapter05
  */
 object Main extends App{
 
-  // java
+// java
 //  public String doSomething(int x) {
 //    // code here
 //  }
 
-  // scala
+// scala
 //  def doSomething(x: Int): String = {
 //    // code here
 //  }
 
   def plusOne(i: Int) = i + 1
 
+  println(plusOne(109))
 
 }

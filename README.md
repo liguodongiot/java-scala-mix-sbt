@@ -356,8 +356,18 @@ scala内部类属于对象
 ### CHAPTER 5 Methods（方法）
 
 #### Introduction
-
 **Main**
+```
+// java
+public String doSomething(int x) {
+    // code here
+}
+
+// scala
+def doSomething(x: Int): String = {
+    // code here
+}
+```
 
 #### 5.1. Controlling Method Scope（控制方法的范围）
 
