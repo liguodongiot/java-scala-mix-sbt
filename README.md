@@ -370,16 +370,23 @@ def doSomething(x: Int): String = {
 ```
 
 #### 5.1. Controlling Method Scope（控制方法的范围）
-
 **ControlMethodScope**
+```
+private[this]     The method is available only to the current instance of the class it’s declared in.
+private           The method is available to the current instance and other instances of the class it’s declared in.
+protected         The method is available only to instances of the current class and subclasses of the current class.
+private[model]    The method is available to all classes beneath the com.acme.coolapp.model package.
+private[coolapp]  The method is available to all classes beneath the com.acme.coolapp package.
+private[acme]     The method is available to all classes beneath the com.acme package.
+(no modifier)     The method is public.
+```
 
-#### 5.2. Calling a Method on a Superclass
-
+#### 5.2. Calling a Method on a Superclass（调用父类的方法）
 **CallMethodSuperclass**
 
 #### 5.3. Setting Default Values for Method Parameters（为方法参数设置默认值）
-
 **SetDefaultValueMethodParam**
+
 
 #### 5.4. Using Parameter Names When Calling a Method（通过参数名调用方法）
 
