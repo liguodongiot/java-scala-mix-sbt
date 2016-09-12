@@ -31,10 +31,10 @@ object ControlMethodScope extends App{
         // ...
       }
     }
-
   }
 
-
+  //private 子类不可用
+  //protected 子类可用
   //By making a method private, it is not available to subclasses.
   class Animal {
     private def heartBeat {}
@@ -49,17 +49,12 @@ object ControlMethodScope extends App{
     breathe
   }
 
-
-
-
 }
 
 
-
-
-
 //In Java, protected methods can be accessed by other classes in the same package,
-//but this isn’t true in Scala. The following code won’t compile because the Jungle class
+//but this isn’t true in Scala.
+//The following code won’t compile because the Jungle class
 //can’t access the breathe method of the Animal class, even though they’re in the same package
 package world {
   class Animal {
@@ -74,13 +69,14 @@ package world {
 
 //4 Package scope
 package com.acme.coolapp.model {
-  class Foo {
 
+  class Foo {
     //the method doX can be accessed by other classes in the same package (the model package),
     //but the method doY is available only to the Foo class
     private[model] def doX {}
     private def doY {}
   }
+
   class Bar {
     val f = new Foo
     f.doX // compiles
@@ -102,12 +98,14 @@ package com.acme.lgd.china {
 import com.acme.lgd.china._
 
 package com.acme.lgd.view {
+
   class Bar {
     val f = new Foo
     //f.doX // won't compile
-    f.doY
-    f.doZ
+    f.doY   //Bar和Foo同为lgd包下面
+    f.doZ   //Bar和Foo同为acme包下面
   }
+
 }
 
 package com.acme.common {
@@ -115,12 +113,13 @@ package com.acme.common {
     val f = new Foo
     //f.doX // won't compile
     //f.doY // won't compile  //要想通过编译com.acme.common改成com.acme.lgd
-    f.doZ
+    f.doZ   //Bar和Foo同为acme包下面
   }
 }
 
 //6 Public scope
 //If no access modifier is added to the method declaration, the method is public.
+//默认是public
 package com.acme.bb.model {
   class Foo {
     def doX {}

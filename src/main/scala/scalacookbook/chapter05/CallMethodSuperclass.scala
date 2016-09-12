@@ -7,12 +7,10 @@ import scalacookbook.chapter05
  */
 object CallMethodSuperclass extends App{
 
-
   class Bundle
 
   class Activity{
     def onCreate(bundle: Bundle): Unit ={
-
     }
   }
 
@@ -41,67 +39,73 @@ object CallMethodSuperclass extends App{
 
   /////////////////////////////
 
+  import section02._
   val c = new Child
+
   println(s"c.printSuper = ${c.printSuper}")
   println(s"c.printMother = ${c.printMother}")
   println(s"c.printFather = ${c.printFather}")
   println(s"c.printHuman = ${c.printHuman}")
 
   println("==================")
-  val d = new chapter05.Dog
+  val d = new Dog2
   d.walkThenRun
 
   println("==================")
-  val d2 = new Dog2
+  val d2 = new Dog3
   d2.walkThenRun
 
 
 }
 
 
+package section02{
 
-trait Human {
-  def hello = "the Human trait"
-}
-trait Mother extends Human {
-  override def hello = "Mother"
-}
-trait Father extends Human {
-  override def hello = "Father"
-}
-
-class Child extends Human with Mother with Father {
-  def printSuper = super.hello
-  def printMother = super[Mother].hello
-  def printFather = super[Father].hello
-  def printHuman = super[Human].hello
-}
-
-
-
-//the following code won’t compile because Dog doesn’t directly extend the Animal trait.
-trait Animal {
-  def walk { println("Animal is walking") }
-}
-
-class FourLeggedAnimal extends Animal {
-
-  override def walk { println("I'm walking on all fours") }
-
-}
-
-class Dog extends FourLeggedAnimal {
-  def walkThenRun {
-    super.walk // works
-    super[FourLeggedAnimal].walk // works
-    //super[Animal].walk // error: won't compile
+  trait Human {
+    def hello = "the Human trait"
   }
-}
-
-class Dog2 extends FourLeggedAnimal with Animal{
-  def walkThenRun {
-    super.walk // works
-    super[FourLeggedAnimal].walk // works
-    super[Animal].walk // works
+  trait Mother extends Human {
+    override def hello = "Mother"
   }
+  trait Father extends Human {
+    override def hello = "Father"
+  }
+
+  //多个特质
+  class Child extends Human with Mother with Father {
+    def printSuper = super.hello
+    def printMother = super[Mother].hello
+    def printFather = super[Father].hello
+    def printHuman = super[Human].hello
+  }
+
+  //the following code won’t compile because Dog doesn’t directly extend the Animal trait.
+  trait Animal {
+    def walk { println("Animal is walking") }
+  }
+
+  class FourLeggedAnimal extends Animal {
+
+    override def walk { println("I'm walking on all fours") }
+
+  }
+
+  //继承类
+  class Dog2 extends FourLeggedAnimal {
+    def walkThenRun {
+      super.walk // works
+      super[FourLeggedAnimal].walk // works
+      //super[Animal].walk // error: won't compile
+    }
+  }
+
+  class Dog3 extends FourLeggedAnimal with Animal{
+    def walkThenRun {
+      super.walk // works
+      super[FourLeggedAnimal].walk // works
+      super[Animal].walk // works
+    }
+  }
+
+
 }
