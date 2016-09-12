@@ -5,6 +5,7 @@ package scalacookbook.chapter05
  */
 object ForceCallAccessMethod extends App{
 
+  import section06._
 
   val p = new Pizza
 
@@ -18,8 +19,10 @@ object ForceCallAccessMethod extends App{
 
 
 }
-
-class Pizza {
+package section06{
+  class Pizza {
     // no parentheses after crustSize
     def crustSize = 12
   }
+}
+

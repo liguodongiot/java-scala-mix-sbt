@@ -5,8 +5,7 @@ package scalacookbook.chapter05
  */
 object SupportFluentStyleProgram extends App{
 
-  import part9._
-
+  import section09._
   val employee = new Employee
 
   // use the fluent methods
@@ -17,7 +16,8 @@ object SupportFluentStyleProgram extends App{
 
 
   //Discussion
-
+  //如果你确定你的类不会被扩展，
+  //返回类型this.type可以不用写。
   //If you’re sure your class won’t be extended,
   //specifying this.type as the return type of your set* methods isn’t necessary;
 
@@ -29,7 +29,8 @@ object SupportFluentStyleProgram extends App{
   p.print()
 
   println("~~~~~~~~~~~~~")
-  p.setCrustSize(142)
+  p.addTopping("liguodong")
+    .setCrustSize(142)
     .setCrustType("thin2")
     .addTopping("cheese2")
     .addTopping("green olives2")
@@ -38,7 +39,8 @@ object SupportFluentStyleProgram extends App{
 
 }
 
-package part9{
+package section09{
+
   class Person {
     protected var fname = ""
     protected var lname = ""
@@ -58,6 +60,7 @@ package part9{
       this.role = role
       this
     }
+
     override def toString = {
       "%s, %s, %s".format(fname, lname, role)
     }

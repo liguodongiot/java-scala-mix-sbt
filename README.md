@@ -389,27 +389,22 @@ private[acme]     The method is available to all classes beneath the com.acme pa
 
 
 #### 5.4. Using Parameter Names When Calling a Method（通过参数名调用方法）
-
 **UseParamNameCallMethod**
 
-#### 5.5. Defining a Method That Returns Multiple Items(Tuples)（定义一个方法返回元组）
 
+#### 5.5. Defining a Method That Returns Multiple Items(Tuples)（定义一个方法返回元组）
 **DefineMethodReturnMultipleItem**
 
 #### 5.6. Forcing Callers to Leave Parentheses off Accessor Methods（去除存取器方法的括号）
-
 **ForceCallAccessMethod**
 
 #### 5.7. Creating Methods That Take Variable-Argument Fields（创建可变参的方法）
-
 **CreateMethodTakeField**
 
 #### 5.8. Declaring That a Method Can Throw an Exception（声明一个方法可以抛出异常）
-
 **DeclareMethodThrowException**
 
 #### 5.9. Supporting a Fluent Style of Programming（流畅的编程风格 method chaining ）
-
 **SupportFluentStyleProgram**
 
 ### Chapter 6. Objects

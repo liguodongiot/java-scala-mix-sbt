@@ -14,6 +14,8 @@ object DefineMethodReturnMultipleItem extends App{
   val (symbol, currentPrice, bidPrice) = getStockInfo
   println("Tuples: "+symbol+" "+currentPrice+" "+bidPrice)
 
+
+
   //Discussion
 
 /*
@@ -32,6 +34,11 @@ object DefineMethodReturnMultipleItem extends App{
   Then you could return an instance of this class from a method, like this:
   return new StockInfo("NFLX", 100.00, 101.00);
 */
+  def returnStockInfo = {
+    new StockInfo("NFLX", 100.00, 101.00);
+  }
+  val retStockInfo = returnStockInfo
+  println(retStockInfo.getSymbol +" "+retStockInfo.getCurrentPrice+" "+retStockInfo.getBidPrice)
 
   //Working with tuples
 

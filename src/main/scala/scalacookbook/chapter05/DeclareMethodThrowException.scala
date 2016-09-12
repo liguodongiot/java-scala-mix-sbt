@@ -8,7 +8,6 @@ import javax.sound.sampled.{UnsupportedAudioFileException, LineUnavailableExcept
  */
 object DeclareMethodThrowException extends App{
 
-
   //To declare that one exception can be thrown
   @throws(classOf[Exception])
   def play {
