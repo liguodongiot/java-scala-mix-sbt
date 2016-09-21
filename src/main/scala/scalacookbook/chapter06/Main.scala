@@ -15,4 +15,6 @@ object Main extends App{
 
   val siblings = List(Person("Kim"), Person("Julia"), Person("Kenny"))
 
+  println(siblings)
+
 }
