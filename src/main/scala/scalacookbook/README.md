@@ -404,11 +404,14 @@ private[acme]     The method is available to all classes beneath the com.acme pa
 **SupportFluentStyleProgram**
 
 ### Chapter 6. Objects
-
 #### Introduction
+```
+object在Scala中有两层意义。
+1、表示一个类的实例
+2、关键字
+```
 
 #### 6.1. Object Casting
-
 **ObjectCast**
 
 #### 6.2. The Scala Equivalent of Java’s .class
