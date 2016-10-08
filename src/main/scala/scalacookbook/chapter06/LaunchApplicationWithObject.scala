@@ -9,4 +9,5 @@ object LaunchApplicationWithObject extends App{
     println(s"Hello, ${args(0)}")
   else
     println("I didn't get your name.")
+
 }

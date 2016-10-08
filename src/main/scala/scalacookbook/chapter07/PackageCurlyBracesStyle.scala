@@ -5,6 +5,8 @@ package cb007
   */
 object PackageCurlyBracesStyle extends App{
 
+  println(new com.acme.store.Foo)
+
   println(new orderentry.Foo)
   println(new customers.Foo)
   println(new customers.database.Foo)

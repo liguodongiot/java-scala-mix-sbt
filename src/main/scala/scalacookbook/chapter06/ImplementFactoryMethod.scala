@@ -6,11 +6,12 @@ package cb006
 object ImplementFactoryMethod extends App{
 
   import part9._
+  //通过apply方法作为工厂接口
   val cat = Animal("cat") // creates a Cat
   val dog = Animal("dog") // creates a Dog
 
-  println(cat.speak)
-  println(dog.speak)
+  cat.speak
+  dog.speak
 
   //Discussion
 
@@ -22,6 +23,7 @@ object ImplementFactoryMethod extends App{
 }
 
 package part9{
+
   trait Animal {
     def speak
   }
@@ -29,15 +31,16 @@ package part9{
     private class Dog extends Animal {
       override def speak { println("woof") }
     }
+
     private class Cat extends Animal {
       override def speak { println("meow") }
     }
+
     // the factory method
     def apply(s: String): Animal = {
       if (s == "dog") new Dog
       else new Cat
     }
-
 
     // an alternative factory method (use one or the other)
     def getAnimal(s: String): Animal = {

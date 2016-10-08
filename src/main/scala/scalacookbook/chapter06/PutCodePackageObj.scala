@@ -1,6 +1,6 @@
 package scalacookbook.chapter06
 
-import model._
+
 
 /**
  * Created by liguodong on 2016/7/9.
@@ -8,6 +8,7 @@ import model._
 
 
 object PutCodePackageObj extends App{
+  import model._
 
   // access our method, constant, and enumeration
   echo("Hello, world")
@@ -39,4 +40,7 @@ package object model {
   // type definition
   type MutableMap[K, V] = scala.collection.mutable.Map[K, V]
   val MutableMap = scala.collection.mutable.Map
+
+
+
 }

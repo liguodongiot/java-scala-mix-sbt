@@ -5,6 +5,8 @@ package scalacookbook.chapter06
  */
 object CreateStaticMembersObject extends App{
 
+  import section06._
+
   println(Pizza.CRUST_TYPE_THIN)
   println(Pizza.getFoo)
 
@@ -20,7 +22,7 @@ object CreateStaticMembersObject extends App{
 
   //Accessing private members
   val f = new Foo
-  println(Foo.double(f)) // prints 4
+  println(Foo.double(f)) //  4
 
   val fObj = new Foo
   fObj.printObj
@@ -28,31 +30,36 @@ object CreateStaticMembersObject extends App{
 
 }
 
+package section06{
 
-// Pizza class
-class Pizza (var crustType: String) {
-  override def toString = "Crust type is " + crustType
-}
+  // Pizza class
+  class Pizza (var crustType: String) {
+    override def toString = "Crust type is " + crustType
+  }
 
-// companion object
-object Pizza {
-  val CRUST_TYPE_THIN = "thin"
-  val CRUST_TYPE_THICK = "thick"
-  def getFoo = "Foo"
-}
+  // companion object
+  object Pizza {
+    val CRUST_TYPE_THIN = "thin"
+    val CRUST_TYPE_THICK = "thick"
+    def getFoo = "Foo"
+  }
 
-class Foo {
-  private val secret = 2
 
-  // access the private object field 'obj'
-  def printObj { println(s"I can see ${Foo.obj}") }
+  class Foo {
+    private val secret = 2
 
-}
+    //访问伴生对象的私有属性
+    // access the private object field 'obj'
+    def printObj { println(s"I can see ${Foo.obj}") }
 
-object Foo {
-  // access the private class field 'secret'
-  def double(foo: Foo) = foo.secret * 2
+  }
 
-  private val obj = "Foo's object"
+  object Foo {
+    //访问伴生类中的私有属性
+    // access the private class field 'secret'
+    def double(foo: Foo) = foo.secret * 2
+
+    private val obj = "Foo's object"
+  }
 }
 

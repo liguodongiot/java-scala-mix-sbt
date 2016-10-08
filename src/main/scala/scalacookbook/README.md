@@ -411,64 +411,66 @@ object在Scala中有两层意义。
 2、关键字
 ```
 
-#### 6.1. Object Casting
+#### 6.1. Object Casting（对象转换）
 **ObjectCast**
 
 #### 6.2. The Scala Equivalent of Java’s .class
-
 **ScalaEquivalentJavaClass**
+```
+Java中的TargetDataLine.class
+<==>
+Scala中的classOf[String]
+```
 
-#### 6.3. Determining the Class of an Object
-
+#### 6.3. Determining the Class of an Object（确定对象的类）
 **DeterminingClassOfObject**
 
 #### 6.4. Launching an Application with an Object
-
 ** LaunchApplicationWithObject**
 
-#### 6.5. Creating Singletons with object
-
+#### 6.5. Creating Singletons with object（创建单例对象）
 **CreateSingletonObject**
 
-#### 6.6. Creating Static Members with Companion Objects（通过伴生对象创建静态成员）
-
+#### 6.6. Creating Static Members with Companion Objects（在伴生对象中创建静态成员）
 **CreateStaticMembersObject**
 
 #### 6.7. Putting Common Code in Package Objects（包对象）
-
 **PutCodePackageObj**
+```
+一些通用的函数，变量，都可以直接定义在包中。
+在 Scala 中，可以把这些函数或方法放在一个称为“包对象”中。每个包只有一个包对象，任何放在包对象的类型都可以认为是包自身的成员。
+包对象通常被编译为 package.class，其包名为定义的包。
+所有按照惯例一般包对象定义放在 package.scala 中，
+比如 PutCodePackageObj 例子中的包对象放在 model 目录下的 package.scala 中。
+```
 
 #### 6.8. Creating Object Instances Without Using the new Keyword（创建对象实例不用new关键字）
-
 **CreateObjectWithoutKeyword**
+```
+通过object的apply方法
+通过case class
+```
 
 #### 6.9. Implement the Factory Method in Scala with apply（通过apply实现工厂方法）
-
 **ImplementFactoryMethod **
 
 
-### CHAPTER 7 Packaging and Imports
-
+### CHAPTER 7 Packaging and Imports （包 和 import）
 #### Introduction
 
-#### 7.1. Packaging with the Curly Braces Style Notation
-
+#### 7.1. Packaging with the Curly Braces Style Notation（大括号方式的包）
 **PackageCurlyBracesStyle**
 
 #### 7.2. Importing One or More Members
-
 **ImportOneMoreMembers**
 
 #### 7.3. Renaming Members on Import（import时重命名里面的成员）
-
 **RenameMembersOnImport**
 
 #### 7.4. Hiding a Class During the Import Process
-
 **HideClassDureImportProcess**
 
 #### 7.5. Using Static Imports
-
 **UseStaticImports**
 
 #### 7.6. Using Import Statements Anywhere

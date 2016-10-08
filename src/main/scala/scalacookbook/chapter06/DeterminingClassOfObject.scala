@@ -16,6 +16,7 @@ object DeterminingClassOfObject extends App{
   //the <p> tag contains one child element
   val hello = <p>Hello, world</p>
 
+  hello.child.foreach(println)
   hello.child.foreach(e => println(e.getClass))
 
   println("~~~~~~~~~~~")
@@ -23,8 +24,8 @@ object DeterminingClassOfObject extends App{
   val hello2 = <p>Hello, <br/>world</p>
   hello2.child.foreach(e => println(e.getClass))
 
+  println("-----Discussion-----")
 
-  //Discussion
   def printClass(c: Any) { println(c.getClass) }
 
   printClass(1)
@@ -36,7 +37,7 @@ object DeterminingClassOfObject extends App{
   def printAll2(numbers: Int*) {
     numbers.foreach(println)
   }
-  printAll(1,2,3)
-  printAll()
+  printAll2(1,2,3)
+  printAll2()
 
 }

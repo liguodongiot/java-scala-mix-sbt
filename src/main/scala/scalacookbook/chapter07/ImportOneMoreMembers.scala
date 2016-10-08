@@ -20,6 +20,7 @@ object ImportOneMoreMembers extends App{
   // import several classes the Scala way
   import java.io.{File, IOException, FileNotFoundException}
 
+
   /*~~~~~=====~~~~~~~~~==============~~~~~~~~=======~~~~~~~~~~~~~*/
 
   //import everything from the java.io package
@@ -27,7 +28,29 @@ object ImportOneMoreMembers extends App{
 
 
   //Discussion
+  //Placing import statements anywhere
+  // 如包section02
 
+}
 
+package section02{
+  class Foo {
+    import javax.swing.JFrame // only visible in this class
+    // ...
+  }
+
+  class Bar {
+    import scala.util.Random // only visible in this class
+    // ...
+  }
+
+  //place import statements inside methods, functions, or blocks
+  class Barbb {
+    def doBar = {
+      import scala.util.Random
+      println("")
+
+    }
+  }
 
 }
