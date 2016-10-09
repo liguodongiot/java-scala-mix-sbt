@@ -9,16 +9,19 @@ object UseStaticImports extends App{
   import java.lang.Math._
 
   val a = sin(0)
+  println(a)
 
   val pi = cos(PI)
+  println(pi)
 
-  import java.awt.Color._
+
   import java.awt.Color._
   println(RED)
   val currentColor = BLUE
+  println(currentColor)
 
-
-  import dates.Day._
+  //Given a Java enum
+  import scalacookbook.chapter07.dates.Day._
   val date = SUNDAY
   // somewhere after the import statement
   if (date == SUNDAY || date == SATURDAY)

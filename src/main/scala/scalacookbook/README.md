@@ -461,20 +461,26 @@ Scala中的classOf[String]
 #### 7.1. Packaging with the Curly Braces Style Notation（大括号方式的包）
 **PackageCurlyBracesStyle**
 
-#### 7.2. Importing One or More Members
+#### 7.2. Importing One or More Members（导入一个或多个类，在任何地方）
 **ImportOneMoreMembers**
 
 #### 7.3. Renaming Members on Import（import时重命名里面的成员）
 **RenameMembersOnImport**
+```
+避免命名冲突
+```
 
-#### 7.4. Hiding a Class During the Import Process
+#### 7.4. Hiding a Class During the Import Process（在导入过程中隐藏类）
 **HideClassDureImportProcess**
 
-#### 7.5. Using Static Imports
+#### 7.5. Using Static Imports（Static Imports）
 **UseStaticImports**
+```
+你想在某种程度上类似于java静态导入的方法导入成员，你
+可以直接引用成员的名称，而不必用他们的类名称来前缀。
+```
 
-#### 7.6. Using Import Statements Anywhere
-
+#### 7.6. Using Import Statements Anywhere（在任何地方使用import语句）
 **UseImportStatementsAnywhere**
 
 ### CHAPTER 8 Traits
