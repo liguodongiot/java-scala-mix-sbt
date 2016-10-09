@@ -5,13 +5,17 @@ package cb008
   */
 object UseTraitsAsMixins extends App{
 
+  import section04._
 
-  val zeus = new cb008.section4.Dog("Zeus")
+  val zeus = new Dog("Zeus")
   zeus.ownerIsHome
   zeus.jumpForJoy
+  zeus.speak
+
 }
 
-package cb008.section4{
+package section04{
+
   trait Tail {
     def wagTail { println("tail is wagging") }
     def stopTail { println("tail is stopped") }
@@ -22,6 +26,7 @@ package cb008.section4{
     def ownerIsHome { println("excited") }
     def jumpForJoy { println("jumping for joy") }
   }
+
   class Dog (name: String) extends Pet (name) with Tail {
     def speak { println("woof") }
 
@@ -30,6 +35,4 @@ package cb008.section4{
       speak
     }
   }
-
-
 }

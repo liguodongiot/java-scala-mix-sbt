@@ -1,8 +1,15 @@
-# java-scala-mix-sbt
+## java-scala-mix-sbt
 
-## Scala Cookbook
+### Scala Cookbook
 **package:scalacookbook**
 
+### databrick编程标准
+**databrickstandard**
+
+
+### 重要模块详解
+#### 特质
+**module.detailtrait**
 
 
 

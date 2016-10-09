@@ -483,49 +483,45 @@ Scala中的classOf[String]
 #### 7.6. Using Import Statements Anywhere（在任何地方使用import语句）
 **UseImportStatementsAnywhere**
 
-### CHAPTER 8 Traits
+### CHAPTER 8 Traits（特质）
 
 #### Introduction
 
 #### 8.1. Using a Trait as an Interface（使用特质作为一个接口）
-
 **UseTraitAsInterface**
+```
+Classes extend your trait using either the extends or with keywords, according to these simple rules:
+• If a class extends one trait, use the extends keyword.
+• If a class extends multiple traits, use extends for the first trait and with to extend (mix in) the other traits.
+• If a class extends a class (or abstract class) and a trait, always use extends before the class name,
+ and use with before the trait name(s).
+```
 
 #### 8.2. Using Abstract and Concrete Fields in Traits（在接口中使用抽象和具体的属性）
-
 **UseAbstractConcreteFieldTraits**
 
 #### 8.3. Using a Trait Like an Abstract Class（使用特质类似于抽象类）
-
 **UseTraitLikeAbstractClass**
 
 #### 8.4. Using Traits as Simple Mixins（特质混入）
-
 **UseTraitsAsMixins**
 
-#### 8.5. Limiting Which Classes Can Use a Trait by Inheritance（通过继承限制哪一个类使用特质）
-
+#### 8.5. Limiting Which Classes Can Use a Trait by Inheritance（通过继承限制哪一个类能够混入特质）
 **LimitClassUseTrait**
 
-#### 8.6. Marking Traits So They Can Only Be Used by Subclasses of a Certain Type（标记特质仅仅只被子类确定的类型使用）
-
+#### 8.6. Marking Traits So They Can Only Be Used by Subclasses of a Certain Type（子类只能混入标记的特质）
 **MarkTraitBySubclasses**
 
-#### 8.7. Ensuring a Trait Can Only Be Added to a Type That Has a Specific Method
-
+#### 8.7. Ensuring a Trait Can Only Be Added to a Type That Has a Specific Method(确保（类，抽象类，特质）混入的特质有一个确定的方法)
 **EnsureTraitAddedType**
 
-#### 8.8. Adding a Trait to an Object Instance
-
+#### 8.8. Adding a Trait to an Object Instance（在对象实例中添加一个特质）
 **AddTraitToObjectInstance**
 
-#### 8.9. Extending a Java Interface Like a Trait
-
+#### 8.9. Extending a Java Interface Like a Trait(像特质一样继承Java接口)
 **ExtendJavaInterfaceLikeTrait**
 
-
 ###Chapter 9. Functional Programming
-
 #### Introduction
 
 **Main**

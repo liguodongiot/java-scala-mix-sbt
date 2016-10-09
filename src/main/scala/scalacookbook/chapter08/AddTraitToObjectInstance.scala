@@ -5,26 +5,38 @@ package scalacookbook.chapter08
   */
 object AddTraitToObjectInstance extends App{
 
+  import section08._
+
   val hulk = new DavidBanner with Angry
 
   ///////////////////////////////
 
   // no debugger
   val child = new Child
+
   // debugger added as the object is created
   val problemChild = new ProblemChild with Debugger
-
-}
-class DavidBanner
-trait Angry {
-  println("You won't like me ...")
+  problemChild.log("axiba")
 }
 
-/////////////////////
-class Child
-class ProblemChild
-trait Debugger {
-  def log(message: String) {
-    // do something with message
+package section08{
+
+  class DavidBanner
+
+  trait Angry {
+    println("You won't like me ...")
   }
+
+  /////////////////////
+  class Child
+
+  class ProblemChild
+
+  trait Debugger {
+    def log(message: String) {
+      // do something with message
+      println("log...")
+    }
+  }
+
 }

@@ -25,7 +25,6 @@ package section06{
       result
     }
 
-
     def getRandomWaitTimeInMinutes: Int = {
       //limit the scope of an import to a method
       import java.util.ArrayList
@@ -35,5 +34,26 @@ package section06{
       p.size()
     }
   }
+}
+
+package foo{
+  // available to all classes defined below   对包内和子包内都可见
+  import java.io.File
+  import java.io.PrintWriter
+  class Foo {
+    // only available inside this class
+    import javax.swing.JFrame
+    // ...
+  }
+  class Bar {
+    // only available inside this class
+    import scala.util.Random
+    // ...
+  }
+
+  package database {
+    // more code here ...
+  }
+
 }
 
