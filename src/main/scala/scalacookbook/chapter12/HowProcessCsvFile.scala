@@ -1,7 +1,7 @@
 package scalacookbook.chapter12
 
 import scala.collection.mutable.ArrayBuffer
-
+import scala._
 /**
   * Created by liguodong on 2016/8/4.
   */

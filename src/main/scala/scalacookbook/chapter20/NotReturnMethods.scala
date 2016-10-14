@@ -1,6 +1,7 @@
 package scalacookbook.chapter20
 
 import scala.util.{Failure, Success, Try}
+import scala._
 
 /**
   * Created by liguodong on 2016/8/27.

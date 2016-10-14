@@ -5,6 +5,7 @@ package scalacookbook.chapter10
   */
 object UseFliterInCollection extends App{
 
+  import scala._
 
   val x = List.range(1, 10)
   // create a list of all the even numbers in the list

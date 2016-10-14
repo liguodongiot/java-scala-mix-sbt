@@ -521,7 +521,7 @@ Classes extend your trait using either the extends or with keywords, according t
 #### 8.9. Extending a Java Interface Like a Trait(像特质一样继承Java接口)
 **ExtendJavaInterfaceLikeTrait**
 
-###Chapter 9. Functional Programming
+###Chapter 9. Functional Programming（函数式编程）
 #### Introduction
 
 **Main**

@@ -38,7 +38,7 @@ object HowOpenReadTextFile extends App {
   bufferedSource.close
 
   //Discussion
-
+  import scala._
   //Leaving files open
   // leaves the file open
   for (line <- io.Source.fromFile("D:\\lilili.txt").getLines) {

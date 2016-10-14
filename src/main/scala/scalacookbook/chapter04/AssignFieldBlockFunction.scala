@@ -15,6 +15,7 @@ object AssignFieldBlockFunction extends App{
 }
 
 package section08{
+  import scala._
   class Foo {
     // set 'text' equal to the result of the block of code
     val text = {

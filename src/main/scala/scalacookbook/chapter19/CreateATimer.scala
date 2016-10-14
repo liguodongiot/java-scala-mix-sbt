@@ -1,5 +1,7 @@
 package scalacookbook.chapter19
 
+import scala._
+
 /**
   * Created by liguodong on 2016/8/24.
   */
