@@ -523,27 +523,21 @@ Classes extend your trait using either the extends or with keywords, according t
 
 ###Chapter 9. Functional Programming（函数式编程）
 #### Introduction
-
 **Main**
 
 #### 9.1. Using Function Literals (Anonymous Functions)（匿名函数）
-
 **UseFunctionLiterals**
 
 #### 9.2. Using Functions as Variables（使用函数作为变量）
-
 **UseFunctionVariables**
 
 #### 9.3. Defining a Method That Accepts a Simple Function Parameter（定义一个接受简单函数作为参数的方法）
-
 **DefineMethodAcceptFunctionParam**
 
 #### 9.4. More Complex Functions（更加复杂的函数作为参数的方法）
-
 **MoreComplexFunctions**
 
 #### 9.5. Using Closures（闭包）
-
 **UseClosures**
 
 A comparison to Java

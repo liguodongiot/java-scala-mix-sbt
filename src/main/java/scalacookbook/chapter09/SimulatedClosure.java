@@ -30,6 +30,7 @@ class Greeter {
         System.out.println(helloPhrase + ", " + name);
     }
 }
+
 class Bar {
     private Greeter greeter;
     public Bar (Greeter greeter) {

@@ -17,7 +17,6 @@ object Main extends App{
   val greater = if (a > b) a else b
 
 
-
   val aString = "213"
 
   val result = try {
@@ -25,6 +24,8 @@ object Main extends App{
   } catch {
     case _ => 0
   }
+
+  println("result:"+result)
 
 
 }

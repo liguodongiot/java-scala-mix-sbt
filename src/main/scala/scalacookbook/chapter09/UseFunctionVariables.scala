@@ -1,9 +1,15 @@
 package scalacookbook.chapter09
 
+import com.typesafe.scalalogging.slf4j.Logger
+import org.slf4j.LoggerFactory
+
 /**
   * Created by liguodong on 2016/7/23.
   */
 object UseFunctionVariables extends App{
+
+  val LOGGER = Logger(LoggerFactory.getLogger(UseFunctionVariables.getClass))
+
 
   val double = (i: Int) => { i * 2 }
   println(double(2))
@@ -21,6 +27,7 @@ object UseFunctionVariables extends App{
   val f3: Int => Boolean = i => { i % 2 == 0 }
   val f4: Int => Boolean = i => i % 2 == 0
   val f5: Int => Boolean = _ % 2 == 0
+
 
 
 
