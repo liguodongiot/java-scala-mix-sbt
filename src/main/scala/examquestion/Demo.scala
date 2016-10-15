@@ -5,31 +5,51 @@ package examquestion
 /**
   * Created by liguodong on 2016/10/14.
   */
-object Demo extends App {
+object Demo  {
 
-  def asciiDisplay(root: TreeNode[String]): Seq[String] = {
-    var result = Seq[String]()
+  var times = 0;
 
-    result = result :+ ("+-"+root.data)
+  def asciiDisplay(
+      root: TreeNode[String])
+    : Unit = {
 
-    for (temp <-root.children){
-      result = asciiDisplay(temp)
+    var temp = times
+
+    //var result = List[String]()
+
+    //result = result :+ ("+="+root.data)
+    println("+="+root.data)
+
+    if(root.children!=Nil){
+      times = times+1
     }
 
-    result
+    for (temp <-root.children){
+//      if(root.children == Nil){
+//        result = result :+ ("| ")
+//      }
+      //result = result :+ ("  "+asciiDisplay(temp))
+      if(times>=1){
+        print("  ")
+      }
+      for(i <- 2 to times)
+        print("| ")
+
+      asciiDisplay(temp)
+    }
+
+    times = temp
+
+    //result
   }
 
 
-  asciiDisplay(TreeNode("Root",
-    children = List(TreeNode("level1-1"),
-      TreeNode("level1-2"),
-      TreeNode("level1-3")))).foreach(println)
 
-  asciiDisplay(TreeNode("Root",
-    children = List(
-      TreeNode("level1-1", children = TreeNode("level2-1", children = TreeNode("level3-1") :: Nil) :: Nil),
-      TreeNode("level1-2"),
-      TreeNode("level1-3")))).foreach(println)
+
+
+
+
+
 }
 
 case class TreeNode[T](data: T, children: Seq[TreeNode[T]] = Nil)
