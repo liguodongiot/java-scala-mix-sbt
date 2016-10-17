@@ -28,7 +28,7 @@ object UseFunctionVariables extends App{
   val f4: Int => Boolean = i => i % 2 == 0
   val f5: Int => Boolean = _ % 2 == 0
 
-
+  println(f5(2))
 
 
   // implicit approach

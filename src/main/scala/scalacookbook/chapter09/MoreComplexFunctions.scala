@@ -5,19 +5,20 @@ package scalacookbook.chapter09
   */
 object MoreComplexFunctions extends App{
 
+  //有参数，无返回值
   def exec(callback: Int => Unit) {
     // invoke the function we were given, giving it an Int parameter
     callback(1)
   }
 
+  //匿名函数
   val plusOne = (i: Int) => { println(i+1) }
-
   exec(plusOne)
 
   val plusTen = (i: Int) => { println(i+10) }
-
   exec(plusTen) // prints 11
 
+  println("--------------")
 
   //Discussion
 
@@ -25,19 +26,31 @@ object MoreComplexFunctions extends App{
   //parameterName: (parameterType(s)) => returnType
 
 
+
   def executeFunction(f:(String) => Int){
     f("110")
   }
 
+  //仅仅只有一个参数时
   // parentheses are optional when the function has only one parameter
-  def executeFunction2(f:String => Int){
+  def executeFunction2(f:String => Int):Int = {
     f("120")
   }
 
+  //多个参数时
   //To define a function that takes two Ints and returns a Boolean
-  def executeFunction(f:(Int, Int) => Boolean): Unit ={
-    f(1,2)
+  def executeFunction(f:(Int, Int) => Boolean,one:Int,two:Int): Boolean ={
+    f(one,two)
   }
+
+  def strToInt(str:String):Int = str.toInt
+  println(executeFunction2(strToInt))
+
+  def OneIfTwo(one:Int,two:Int):Boolean = if(one>two) true; else false
+  println(executeFunction(OneIfTwo,1,2))
+
+  println("~~~~~~~~~~~~~~")
+
 
   //The following exec method expects a function that takes String, Int, and Double
   //  parameters and returns a Seq[String]
@@ -45,16 +58,18 @@ object MoreComplexFunctions extends App{
     f("12",1,32.2D)
   }
 
+
   def exec2(f:(Int) => Unit): Unit ={
     f(2)
   }
+
+
   def exec3(f:Int => Unit): Unit ={
     f(3)
   }
 
 
   //Passing in a function with other parameters
-
   val sayHello = () => println("Hello")
 
   //define a method that takes this function as a parameter
@@ -62,8 +77,9 @@ object MoreComplexFunctions extends App{
   def executeXTimes(callback:() => Unit, numTimes: Int) {
     for (i <- 1 to numTimes) callback()
   }
-
   executeXTimes(sayHello, 3)
+
+  println("-------------------")
 
   //create a method named executeAndPrint that takes a function
   // and two Int parameters
@@ -74,6 +90,7 @@ object MoreComplexFunctions extends App{
 
   //val result = f(x, y)
   val sum = (x: Int, y: Int) => x + y
+
   val multiply = (x: Int, y: Int) => x * y
 
   executeAndPrint(sum, 2, 9) // prints 11
@@ -101,6 +118,7 @@ object MoreComplexFunctions extends App{
     println(a)
     println(b)
   }
+
   // 3a - pass the printTwoThings method to the exec method
   case class Person2(name: String)
   exec(printTwoThings2, "Hello", Person2("Dave"))

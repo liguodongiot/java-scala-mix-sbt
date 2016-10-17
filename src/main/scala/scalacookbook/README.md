@@ -533,9 +533,18 @@ Classes extend your trait using either the extends or with keywords, according t
 
 #### 9.3. Defining a Method That Accepts a Simple Function Parameter（定义一个接受简单函数作为参数的方法）
 **DefineMethodAcceptFunctionParam**
+```
+a three-step process:
+1. Define your method, including the signature for the function you want to take as a method parameter.
+(定义您的方法，包括作为一个方法参数的函数的签名。 )
+2. Define one or more functions that match this signature.(定义一个或多个函数来匹配这个签名。)
+3. Sometime later, pass the function(s) as a parameter to your method.
+```
 
-#### 9.4. More Complex Functions（更加复杂的函数作为参数的方法）
+
+#### 9.4. More Complex Functions（更加复杂的函数作为参数的方法，多个参数）
 **MoreComplexFunctions**
+
 
 #### 9.5. Using Closures（闭包）
 **UseClosures**
