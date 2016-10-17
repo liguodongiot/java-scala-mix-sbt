@@ -8,7 +8,6 @@ object UseClosures extends App{
   var hello = "Hello"
   def sayHello(name: String) { println(s"$hello, $name") }
 
-
   // execute sayHello from the exec method foo
   val foo = new Foo
   foo.exec(sayHello, "Al")
@@ -19,6 +18,7 @@ object UseClosures extends App{
   foo.exec(sayHello, "Lorenzo")
 
   //Discussion
+  println("-------------")
 
   //A second example
   val isOfVotingAge2 = (age: Int) => age >= 18
@@ -27,11 +27,11 @@ object UseClosures extends App{
 
   var votingAge = 18
   val isOfVotingAge = (age: Int) => age >= votingAge
-
   def printResult(f: Int => Boolean, x: Int) {
     println(f(x))
   }
   printResult(isOfVotingAge, 20) // true
+
 
   // change votingAge in one scope
   votingAge = 21
@@ -42,6 +42,7 @@ object UseClosures extends App{
   //Using closures with other data types
   import scala.collection.mutable.ArrayBuffer
   val fruits = ArrayBuffer("apple")
+
   // the function addToBasket has a reference to fruits
   val addToBasket = (s: String) => {
     fruits += s
@@ -51,16 +52,16 @@ object UseClosures extends App{
   def buyStuff(f: String => Unit, s: String) {
     f(s)
   }
-  buyStuff(addToBasket, "cherries")
 
+  buyStuff(addToBasket, "cherries")
   buyStuff(addToBasket, "grapes")
 
 }
 
 class Foo {
-    // a method that takes a function and a string, and
-    // the function, and then executes the function
-    def exec(f:(String) => Unit, name: String) {
-      f(name)
-    }
+  // a method that takes a function and a string, and
+  // the function, and then executes the function
+  def exec(f:(String) => Unit, name: String) {
+    f(name)
   }
+}

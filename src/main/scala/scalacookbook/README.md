@@ -549,67 +549,74 @@ a three-step process:
 #### 9.5. Using Closures（闭包）
 **UseClosures**
 
-A comparison to Java
-
+#### A comparison to Java（与Java进行比较）
 **SimulatedClosure**
 
-#### 9.6. Using Partially Applied Functions
-
+#### 9.6. Using Partially Applied Functions（有选择的应用函数的一部分）
 **UsePartiallyAppliedFunctions**
 
-#### 9.7. Creating a Function That Returns a Function（创建一个函数返回函数）
-
+#### 9.7. Creating a Function That Returns a Function（创建一个返回函数的函数）
 **CreatFunctionReturnFunction**
 
-#### 9.8. Creating Partial Functions（局部函数）
-
+#### 9.8. Creating Partial Functions（创建PartialFunction）
 **CreatePartialFunction**
+```
+PartialFunction
 
-#### 9.9. A Real-World Example
+orElse and andThen
 
+collect
+```
+
+#### 9.9. A Real-World Example（牛顿求解方程的方法）
 **AReadExample**
 
 
 ###Chapter 10. Collections（集合）
-
 #### Introduction
-
 **Main**
 
 #### 10.1. Understanding the Collections Hierarchy（了解集合层次结构）
-
 **UnderstandCollectionHierarchy**
+```
+Vector
+IndexedSeq
+LinearSeq
+Map
+Set
+```
 
-#### 10.2. Choosing a Collection Class
+![](pic/collection.png)
 
+
+#### 10.2. Choosing a Collection Class（选择一个集合类）
 **ChooseCollectionClass**
+```
+• Sequence
+• Map
+• Set
+```
 
-#### 10.3. Choosing a Collection Method to Solve a Problem
 
+#### 10.3. Choosing a Collection Method to Solve a Problem（选择合适的集合方法）
 **ChooseCollectionMethodSolveProblem**
 
 #### 10.4. Understanding the Performance of Collections
-
 **UnderstandPerformanceCollections**
 
 #### 10.5. Declaring a Type When Creating a Collection（创建集合时，声明一个类型）
-
 **DeclareTypeWhenCreateCollection**
 
 #### 10.6. Understanding Mutable Variables with Immutable Collections
-
 **UnderstandMutableVariables**
 
 #### 10.7. Make Vector Your “Go To” Immutable Sequence（Vector不可变序列）
-
 **MakeVectorImmutableSequence**
 
 #### 10.8. Make ArrayBuffer Your “Go To” Mutable Sequence（ArrayBuffer可变序列）
-
 **MakeArrayBufferMutableSequence**
 
 #### 10.9. Looping over a Collection with foreach（用foreach循环一个集合）
-
 **LoopCollectionWithForeach**
 
 #### 10.10. Looping over a Collection with a for Loop（用for循环一个集合）

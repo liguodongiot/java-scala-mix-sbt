@@ -6,11 +6,15 @@ package scalacookbook.chapter10
 object Main extends App{
 
   val list = List.range(1, 10)
-  val events = list.filter(_ % 2 == 0)
+  println(list)
 
+  val events = list.filter(_ % 2 == 0)
+  println(events)
 
   for {
     e <- list
     if e % 2 == 0
-  } yield e
+  } yield print(e)
+
+
 }

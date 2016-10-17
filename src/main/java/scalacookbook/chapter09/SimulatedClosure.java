@@ -13,6 +13,7 @@ public class SimulatedClosure {
         greeter.setHelloPhrase("Hola");
         greeter.sayHello("Lorenzo"); // "Hola, Lorenzo"
 
+
         greeter.setHelloPhrase("Yo");
         Bar bar = new Bar(greeter); // pass the greeter instance to a new Bar
         bar.sayHello("Adrian"); // invoke greeter.sayHello via Bar

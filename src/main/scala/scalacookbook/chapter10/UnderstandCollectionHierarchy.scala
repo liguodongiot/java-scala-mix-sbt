@@ -24,12 +24,15 @@ object UnderstandCollectionHierarchy extends App{
 
   val m = Map(1 -> "a", 2 -> "b")
 
+  println(m)
+
   val m2 = collection.mutable.Map(1 -> "a", 2 -> "b")
 
+  println(m2)
 
 
   //Sets
   val s = collection.mutable.Set(1, 2, 3)
-
+  println(s)
 
 }
