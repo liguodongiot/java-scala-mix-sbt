@@ -32,7 +32,7 @@ object ChooseCollectionMethodSolveProblem {
   //其他方法
   // par, view, flatten, foreach, and mkString.
 
-  
+
   //Common methods on Traversable collections
   //      c collect f
   //      c count p
