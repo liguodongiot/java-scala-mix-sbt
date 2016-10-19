@@ -640,7 +640,7 @@ min         The smallest element of the set, or the smallest key of a map.
 #### 10.5. Declaring a Type When Creating a Collection（创建集合时，声明一个类型）
 **DeclareTypeWhenCreateCollection**
 
-#### 10.6. Understanding Mutable Variables with Immutable Collections
+#### 10.6. Understanding Mutable Variables with Immutable Collections（理解在不可变集合中可变的变量）
 **UnderstandMutableVariables**
 
 #### 10.7. Make Vector Your “Go To” Immutable Sequence（Vector不可变序列）
@@ -661,10 +661,10 @@ min         The smallest element of the set, or the smallest key of a map.
 #### 10.12. Using Iterators
 **UseIterators**
 
-#### 10.13. Transforming One Collection to Another with for/yield（通过for/yield转换一个集合为另一个）
+#### 10.13. Transforming One Collection to Another with for/yield（通过for/yield转换一个集合为另一个集合）
 **TransformOneCollectionForYield**
 
-#### 10.14. Transforming One Collection to Another with map（通过map转换一个集合为另一个）
+#### 10.14. Transforming One Collection to Another with map（通过map转换一个集合为另一个集合）
 **TransformOneCollectionAnotherMap**
 
 #### 10.15. Flattening a Lsit of Lists with flatten（使多个List变成一个List）

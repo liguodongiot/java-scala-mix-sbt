@@ -20,6 +20,7 @@ object LoopCollectionWithForeach extends App{
 
   x.foreach(println)
 
+  println("Discussion.......")
 
   //Discussion
   def printIt(c: Char) { println(c) }
@@ -28,6 +29,8 @@ object LoopCollectionWithForeach extends App{
   "HAL".foreach(printIt)
 
   "HAL".foreach((c: Char) => println(c))
+
+  println("~~~~~~~~~~~~~~~~")
 
   val longWords = new StringBuilder
   "Hello world it's Al".split(" ").foreach{ e =>
