@@ -15,8 +15,8 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport
 object ScalaJdbcConnectBySpring extends App{
 
   // read the application context file
-  val ctx = new ClassPathXmlApplicationContext("ApplicationContext-db.xml",
-    "ApplicationContext-dao.xml")
+  val ctx = new ClassPathXmlApplicationContext("scalacookbook/ApplicationContext-db.xml",
+    "scalacookbook/ApplicationContext-dao.xml")
 
   // get a testDao instance
   val userDao = ctx.getBean("userDao").asInstanceOf[UserDao]
