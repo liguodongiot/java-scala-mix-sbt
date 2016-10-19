@@ -27,7 +27,7 @@ object LoopCollectionForLoop extends App{
     println(s"element $count is $elem")
   }
 
-
+  //使计数器从1开始
   //Using zip with a Stream is another way to generate a counter
   for ((elem,count) <- fruits2.zip(Stream from 1)) {
     println(s"element $count is $elem")

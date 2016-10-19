@@ -6,6 +6,7 @@ package scalacookbook.chapter10
 object CombineMapFlatten extends App{
 
   val bag = List("1", "2", "three", "4", "one hundred seventy five")
+
   def toInt(in: String): Option[Int] = {
     try {
       Some(Integer.parseInt(in.trim))
@@ -24,6 +25,8 @@ object CombineMapFlatten extends App{
   println(bag.map(toInt).flatten.sum)
 
   println(bag.flatMap(toInt).sum)
+
+  println("-------------------")
 
   println(bag.flatMap(toInt).filter(_ > 1))
 

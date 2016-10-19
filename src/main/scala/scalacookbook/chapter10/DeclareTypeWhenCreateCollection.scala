@@ -15,26 +15,40 @@ object DeclareTypeWhenCreateCollection extends App{
   println(x3)
 
   //Discussion
+  import  scalacookbook.chapter10.section5._
+  println(classOf[Dog])
+
   val xx = Array(Dog("Fido"), Cat("Felix"))
 
   val xx2 = Array[Animal](Dog("Fido"), Cat("Felix"))
 
-
-
 }
 
-trait Animal
-trait FurryAnimal extends Animal
+package section5
+{
+  trait Animal
+  trait FurryAnimal extends Animal
 
-case class Dog(name: String) extends Animal
-case class Cat(name: String) extends Animal
+  case class Dog(name: String) extends Animal
+  case class Cat(name: String) extends Animal
 
-class AnimalKingdom {
-  def animals = Array(Dog("Fido"), Cat("Felix"))
+  class AnimalKingdom {
 
- // def animals2: Array[Product with Serializable with Animal]
+    //声明一个方法返回数组
 
-  //def animals3: Array[Animal]
+    def animals = Array(Dog("Fido"), Cat("Felix"))
 
-  def animals2 = Array[Animal](Dog("Fido"), Cat("Felix"))
+    //When you generate the Scaladoc for this class, the animals method will
+    // show the“Product with Serializable” in its Scaladoc
+
+    //def animals2: Array[Product with Serializable with Animal]
+
+    ////////////////////////////////////////////////
+
+    def animals3 = Array[Animal](Dog("Fido"), Cat("Felix"))
+
+    //have it appear like this in your Scaladoc
+
+    //def animals4: Array[Animal]
+  }
 }

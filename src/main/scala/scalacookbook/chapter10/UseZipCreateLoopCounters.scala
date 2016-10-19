@@ -29,9 +29,12 @@ object UseZipCreateLoopCounters extends App{
 
   val list = List("a", "b", "c")
 
+  //返回一个Tuple2元素的序列
   val zwi = list.zipWithIndex
   println(zwi)
 
+  //调用zipWithIndex之前，先调用view ，
+  // 将原始列表创建懒惰视图，直到被需要的时候才调用。
   val zwi2 = list.view.zipWithIndex
   println(zwi2)
 
@@ -48,19 +51,5 @@ object UseZipCreateLoopCounters extends App{
 
   println("~~~~~~~~~~~~~~~~")
 
-  val it = Iterator(1,2,3)
-  it.foreach(println)
-  //But when you attempt the same call a second time,
-  // you won’t get any output, because the iterator has been exhausted.
-  it.foreach(println)
-  println("~~~~~~~~~~~~~~~~")
-  val it2 = Iterator(1,2,3)
-  println(it2.toArray.mkString(","))
 
-  //it.to[Tab]
-  /*
-  toArray toBuffer toIndexedSeq toIterable toIterator
-  toList toMap toSeq toSet toStream
-  toString toTraversable
-  */
 }

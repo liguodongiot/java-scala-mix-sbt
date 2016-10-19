@@ -11,9 +11,9 @@ object UnderstandMutableVariables extends App{
 
   sisters.foreach(println)
 
-
-  var sisters2 = Vector("Melinda")
-  sisters2 = Vector("Melinda", "Melissa")
-  sisters2 = Vector("Melinda", "Melissa", "Marisa")
+  //以上的操作实际上是每一步操作分配了一个新的集合
+  //  var sisters2 = Vector("Melinda")
+  //  sisters2 = Vector("Melinda", "Melissa")
+  //  sisters2 = Vector("Melinda", "Melissa", "Marisa")
 
 }
