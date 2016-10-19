@@ -588,7 +588,6 @@ Set
 
 ![](pic/collection.png)
 
-
 #### 10.2. Choosing a Collection Class（选择一个集合类）
 **ChooseCollectionClass**
 ```
@@ -597,12 +596,46 @@ Set
 • Set
 ```
 
-
 #### 10.3. Choosing a Collection Method to Solve a Problem（选择合适的集合方法）
 **ChooseCollectionMethodSolveProblem**
 
-#### 10.4. Understanding the Performance of Collections
+#### 10.4. Understanding the Performance of Collections（了解集合的性能）
 **UnderstandPerformanceCollections**
+```
+C       The operation takes (fast) constant time.
+eC      The operation takes effectively constant time, but this might depend on some assumptions, 
+            such as maximum length of a vector, or distribution of hash keys.
+aC      The operation takes amortized constant time. Some invocations of the operation might take longer, 
+            but if many operations are performed, on average only constant time per operation is taken.
+Log     The operation takes time proportional to the logarithm of the collection size.
+L       The operation is linear, so the time is proportional to the collection size.
+-       The operation is not supported    
+```
+
+![](pic/collectionSpeed.png)
+
+```
+head        Selecting the first element of the sequence.
+tail        Producing a new sequence that consists of all elements of the sequence except the first one.
+apply       Indexing.
+update      Functional update for immutable sequences, side-effecting update (with update) for mutable sequences.
+prepend     Adding an element to the front of the sequence. For immutable sequences, this produces a new sequence.
+            For mutable sequences, it modifies the existing sequence.
+append      Adding an element at the end of the sequence. For immutable sequences, this produces a new sequence.
+            For mutable sequences, it modifies the existing sequence.
+insert      Inserting an element at an arbitrary position in the sequence. 
+            This is supported directly only for mutable sequences.
+```
+
+**Map and set performance characteristics**
+![](pic/mapSet.png)
+```
+lookup      Testing whether an element is contained in a set, or selecting a value associated with a map key.
+add         Adding a new element to a set or key/value pair to a map.
+remove      Removing an element from a set or a key from a map.
+min         The smallest element of the set, or the smallest key of a map.
+```
+
 
 #### 10.5. Declaring a Type When Creating a Collection（创建集合时，声明一个类型）
 **DeclareTypeWhenCreateCollection**
