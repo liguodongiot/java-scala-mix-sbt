@@ -26,6 +26,8 @@ object SortCollection extends App{
 
   println( List("banana", "pear", "apple", "orange").sortWith(_.length > _.length))
 
+  println("------------------------")
+
   //sorting method gets longer, first declare it as a method.
   def sortByLength(s1: String, s2: String) = {
     println("comparing %s and %s".format(s1, s2))
@@ -33,6 +35,8 @@ object SortCollection extends App{
   }
 
   List("banana", "pear", "apple").sortWith(sortByLength)
+
+  println("-----------")
 
   //Discussion
   class Person2 (var name: String) {
@@ -54,8 +58,13 @@ object SortCollection extends App{
 
   val sortedDudes = dudes.sortWith(_.name < _.name)
 
+  println(sortedDudes)
+
   val sortedDudes2 = dudes.sortWith(_.name > _.name)
 
+  println(sortedDudes2)
+
+  println("~~~~~~~~~~~~~~~~~")
   //Mix in the Ordered trait
 
   //use the Person class with the sorted method, just mix the Ordered trait

@@ -6,8 +6,10 @@ package scalacookbook.chapter11
 object DeleteElementList extends App{
 
   val originalList = List(5, 1, 4, 3, 2)
-
+  //List是不可变的，因此想要删除元素，需要过滤掉出想要的结果到一个新的变量。
   val newList = originalList.filter(_ > 2) //List(5, 4, 3)
+
+  println(newList)
 
   //ListBuffer
 
@@ -25,7 +27,10 @@ object DeleteElementList extends App{
   println(x)
 
   val y = ListBuffer(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+  // use --= to delete multiple elements that are specified in another collection
   y --= Seq(1,2,3)
 
+  println(y)
 
 }

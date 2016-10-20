@@ -8,6 +8,7 @@ object UseFliterInCollection extends App{
   import scala._
 
   val x = List.range(1, 10)
+
   // create a list of all the even numbers in the list
   val evens = x.filter(_ % 2 == 0)
   println(evens)
@@ -19,6 +20,8 @@ object UseFliterInCollection extends App{
 
   println(x2)
   println(y2)
+
+  println("-----------")
 
   val list = "apple" :: "banana" :: 1 :: 2 :: Nil
 

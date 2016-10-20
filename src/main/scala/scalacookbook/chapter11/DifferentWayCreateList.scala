@@ -8,6 +8,7 @@ object DifferentWayCreateList extends App{
   //创建和初始填充列表
   // 1
   val list = 1 :: 2 :: 3 :: Nil   //List[Int] = List(1, 2, 3)
+  println(list)
 
   // 2
   val list2 = List(1, 2, 3)   //List[Int] = List(1, 2, 3)
@@ -24,13 +25,26 @@ object DifferentWayCreateList extends App{
 
   // 5
   val x5 = List.fill(3)("foo")     //List[String] = List(foo, foo, foo)
+
+
   // 6
   val x6 = List.tabulate(5)(n => n * n)  //List[Int] = List(0, 1, 4, 9, 16)
+
   // 7
   val x7 = collection.mutable.ListBuffer(1, 2, 3).toList   //List[Int] = List(1, 2, 3)
+
   // 8
   "foo".toList     //List[Char] = List(f, o, o)
 
+
+
+  //制成表格
+
+  //List.tabulate()方法
+  // 它的参数是一样List.fill：第一个参数列表给出的列表的尺寸大小，
+  // 而第二描述列表的元素。唯一的区别在于，代替的元素被固定，它们是从一个函数计算。
+  val mul = List.tabulate(4,5)( _ * _ )
+  println( "mul : " + mul  )
 
 
 
