@@ -5,6 +5,9 @@ package scalacookbook.chapter11
   */
 object CreateMutableList extends App{
 
+
+  //Use a ListBuffer, and convert the ListBuffer to a List when needed.
+
   import scala.collection.mutable.ListBuffer
   var fruits = new ListBuffer[String]()
   // add one element at a time to the ListBuffer
@@ -14,22 +17,28 @@ object CreateMutableList extends App{
 
   // add multiple elements
   fruits += ("Strawberry", "Kiwi", "Pineapple")
+
   // remove one element
   fruits -= "Apple"
+
   // remove multiple elements
   fruits -= ("Banana", "Orange")
+
   // remove multiple elements specified by another sequence
   fruits --= Seq("Kiwi", "Pineapple")
+
   // convert the ListBuffer to a List when you need to
   val fruitsList = fruits.toList
 
+  println(fruitsList)
 
-  //a List is immutable, if you need to create a list that is constantly changing,
+  //a List is immutable, if you need to create a list that is constantly changing（不断地改变）,
   //the preferred approach is to use a ListBuffer while the list is being modified.
   val x = List(2) //x: List[Int] = List(2)
   val y = 1 :: x  //y: List[Int] = List(1, 2)
   val z = 0 :: y  //z: List[Int] = List(0, 1, 2)
 
+  println(z)
 
 
 

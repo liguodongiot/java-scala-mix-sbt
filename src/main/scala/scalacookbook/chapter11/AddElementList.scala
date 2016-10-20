@@ -16,15 +16,19 @@ object AddElementList extends App{
   val y = 1 :: x // List[Int] = List(1, 2)
   val z = 0 :: y // List[Int] = List(0, 1, 2)
 
-
+  println(z)
 
   var xx = List(2)
   xx = 1 :: xx    //List[Int] = List(1, 2)
   xx = 0 :: xx    //List[Int] = List(0, 1, 2)
 
+  println(xx)
+
   val list1 = 3 :: Nil
   val list2 = 2 :: list1
   val list3 = 1 :: list2
+
+  println(list3)
 
   //
   val f1 = new Printer
@@ -36,7 +40,14 @@ object AddElementList extends App{
 
   val ax = List(1)
   val ay = 0 +: ax  //List(0, 1)
+
+  println(ay)
+
+  //ax不可变
+
   val ay2 = ax :+ 2 //List(1, 2)
+
+  println(ay2)
 
 }
 

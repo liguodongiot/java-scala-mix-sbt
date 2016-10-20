@@ -678,57 +678,157 @@ min         The smallest element of the set, or the smallest key of a map.
 
 #### 10.18. Extracting a Sequence of Elements from a Collection（从集合中提取一个元素序列）
 **ExtractSequenceElementFromCollection**
+```
+drop
+dropWhile
+dropRight
 
-#### 10.19. Splitting Sequences into Subsets (groupBy,partition, etc.)
+take
+takeWhile
+takeRight
+
+slice
+```
+
+#### 10.19. Splitting Sequences into Subsets (groupBy,partition, etc.)（将序列通过[groupBy,partition...]分成子序列）
 **SplitSequencesSubsets**
+```
+groupBy
+partition
+span
+splitAt
+sliding
+unzip
+zip
+```
 
-#### 10.20. Walking Through a Collection with the reduce and fold Methods
+
+#### 10.20. Walking Through a Collection with the reduce and fold Methods（集合中用reduce和fold方法）
 **WalkThroughCollectionWithReduceFold**
+```
+reduceLeft
+reduceRight
+
+scanLeft 
+scanRight
+
+par (并行集合)
+reduce
+```
+
 
 #### 10.21. Extracting Unique Elements from a Sequence（从序列中提取唯一元素）
 **ExtractUniqueElementFromSequence**
-
+```
+distinct
+toSet
+```
 
 #### 10.22. Merging Sequential Collections（合并序列集合）
 **MergeSequentialCollection**
+```
+intersect
 
-#### 10.23. Merging Two Sequential Collections into Pairs with zip
+union
+++
+
+diff
+--
+
+concat
+:::
+
+toSet
+```
+
+#### 10.23. Merging Two Sequential Collections into Pairs with zip（用zip合并两个集合为一个Pair）
 **MergeTwoSequentialCollectionPair**
+```
+zip
+zipAll
+zipped
+zipWithIndex
+```
 
 #### 10.24. Creating a Lazy View on a Collection（在集合中创建懒惰视图）
 **CreateLazyViewOnCollection**
+```
+view
+force
+```
 
-#### 10.25. Populating a Collection with a Range
-
+#### 10.25. Populating a Collection with a Range（通过range填充一个集合）
 **PopulatingCollectionWithRange**
+```
+Array.range
+List.range
+Vector.range
+
+toArray toBuffer toIndexedSeq 
+toIterable toIterator toList toMap
+toSeq toSet toStream toString toTraversable
+```
 
 #### 10.26. Creating and Using Enumerations（枚举）
-
 **CreateAndUseEnumeration**
+```
+枚举对于创建一组常量非常有用，例如
+days of the week,weeks of the year, and many other situations 
+where you have a group of related, constant values.
+```
 
-#### 10.27. Tuples, for When You Just Need a Bag of Things
+#### 10.27. Tuples, for When You Just Need a Bag of Things（元组）
 **TuplesWhenJustNeedBag**
 
 #### 10.28. Sorting a Collection（集合排序）
 **SortCollection**
+```
+sorted
+sortWith
+
+Ordered
+```
+
 
 #### 10.29. Converting a Collection to a String with mkString
 **ConvertCollectionToStringWithMkstring**
-
+```
+mkString
+toString
+```
 
 ### Chapter 11. List, Array, Map, Set (and More)
-
 #### Introduction
 
-#### 11.1. Different Ways to Create and Populate a List
-
+#### 11.1. Different Ways to Create and Populate a List(不同的方式创建和初始化List)
 **DifferentWayCreateList**
+```
+range
+fill
+tabulate
+```
 
-#### 11.2. Creating a Mutable List（创建一个可变列表）
+#### 11.2. Creating a Mutable List（创建一个可变List）
 **CreateMutableList**
+```
+ListBuffer
+```
 
 #### 11.3. Adding Elements to a List（向List中增加元素）
 **AddElementList**
+```
+:: 该方法被称为cons，意为构造，向队列的头部追加数据，创造新的列表。
+用法为 x::list,其中x为加入到头部的元素，无论x是列表与否，它都只将成为新生成列表的第一个元素，
+也就是说新生成的列表长度为list的长度＋1(btw, x::list等价于list.::(x))
+
+:+和+: 两者的区别在于:+方法用于在尾部追加元素，+:方法用于在头部追加元素，和::很类似，
+但是::可以用于pattern match ，而+:则不行. 关于+:和:+,只要记住冒号永远靠近集合类型就OK了。
+
+++ 该方法用于连接两个集合，list1++list2
+
+::: 该方法只能用于连接两个List类型的集合
+```
+
 
 #### 11.4. Deleting Elements from a List (or ListBuffer)（从List和ListBuffer中删除元素）
 **DeleteElementList**
