@@ -15,10 +15,14 @@ object ChooseMapImpl extends App{
   )
   println(grades)
 
+  //希望一个map中记住插入的元素的顺序
   //If you want a map that remembers the insertion order of its elements,
   // use a LinkedHashMap or ListMap.
 
-  //从前顺序插入
+  //Scala only has a mutable LinkedHashMap, and it returns its
+  //elements in the order you inserted them
+
+  //从后顺序插入
   import scala.collection.mutable.LinkedHashMap
   var states = LinkedHashMap("IL" -> "Illinois")
   states += ("KY" -> "Kentucky")
@@ -28,7 +32,11 @@ object ChooseMapImpl extends App{
   states += ("AB" -> "Texas")
   println(states)
 
-  //从后顺序插入
+  //Scala has both mutable and immutable ListMap classes. They return elements in the
+  //opposite order in which you inserted them, as though each insert was at the head of the
+  //map (like a List)
+
+  //从前顺序插入
   import scala.collection.mutable.ListMap
   var states2 = ListMap("IL" -> "Illinois")
 
@@ -40,7 +48,10 @@ object ChooseMapImpl extends App{
 
   states2 += ("AB" -> "Texas")
   println(states2)
-  //The LinkedHashMap implements a mutable map using a hashtable
-  //a ListMap is backed by a list-based data structure.
+
+
+  //The LinkedHashMap implements a mutable map using a hashtable,
+  // whereas a ListMap is backed by a list-based data structure.
+  // (Personally, I don’t use the List class very often, so I prefer the LinkedHashMap.)
 
 }

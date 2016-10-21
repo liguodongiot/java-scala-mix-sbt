@@ -20,4 +20,6 @@ object TestExistKeyValueInMap extends App{
   println(states.valuesIterator.exists(_.contains("yucky")))
 
   println(states.valuesIterator)
+  println(states.valuesIterator.toList)
+
 }

@@ -10,10 +10,10 @@ object DifferentWayCreateArray extends App{
   val fruits = Array("Apple", "Banana", "Orange")
 
   // scala makes this Array[Double]
-  val xx = Array(1, 2.0, 33D, 400L)
+  val xx = Array(1, 2.0, 33D, 400L)       //xx: Array[Double] = Array(1.0, 2.0, 33.0, 400.0)
 
   // manually override the type
-  val xx2 = Array[Number](1, 2.0, 33D, 400L)
+  val xx2 = Array[Number](1, 2.0, 33D, 400L)    //xx2: Array[Number] = Array(1, 2.0, 33.0, 400)
 
   // create an array with an initial size
   val fruits2 = new Array[String](3)
@@ -23,10 +23,15 @@ object DifferentWayCreateArray extends App{
   fruits2(1) = "Banana"
   fruits2(2) = "Orange"
 
+  println(fruits2.toList)
+
+  //初始化为NULL，生产环境不建议这样操作
   // this uses a null. don't do this in the real world
   var fruits3: Array[String] = _
   // later ...
   fruits3 = Array("apple", "banana")
+
+  println(fruits3.toList)
 
   val x = Array.range(1, 10)
 

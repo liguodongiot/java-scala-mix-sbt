@@ -18,7 +18,13 @@ object UseSortSet extends App{
 
   //Discussion
 
+  //The SortedSet is available only in an immutable version. If you need a mutable version,
+  // use the java.util.TreeSet.
+  // The LinkedHashSet is available only as a mutable collection.
+
+
   //class Person (var name: String)
+
   //继承Ordered特质，并实现compare方法
   class Person (var name: String) extends Ordered [Person] {
     override def toString = name
@@ -33,21 +39,19 @@ object UseSortSet extends App{
         -1
     }
   }
+
   import scala.collection.SortedSet
   val aleka = new Person("Aleka")
   val christina = new Person("Christina")
   val molly = new Person("Molly")
   val tyler = new Person("Tyler")
 
-  // this won't work
+  // 没有继承Ordered this won't work
   //val ss = SortedSet(molly, tyler, christina, aleka)
-
 
   //To solve this problem, modify the Person class to extend the Ordered trait,
   // and implement a compare method
   val ss = SortedSet(molly, tyler, christina, aleka) //scala.collection.SortedSet[Person] = TreeSet(Aleka, Christina, Molly, Tyler)
-
-
-
+  println(ss)
 
 }

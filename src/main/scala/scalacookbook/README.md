@@ -829,96 +829,226 @@ ListBuffer
 ::: 该方法只能用于连接两个List类型的集合
 ```
 
-
 #### 11.4. Deleting Elements from a List (or ListBuffer)（从List和ListBuffer中删除元素）
 **DeleteElementList**
+```
+filter
+remove
+-=
+--=
+```
 
-#### 11.5. Merging (Concatenating) Lists
+#### 11.5. Merging (Concatenating) Lists（合并List）
 **MergeLists**
+```
+++
+:::
+concat
+```
 
 #### 11.6. Using Stream, a Lazy Version of a List（使用List，一个懒惰版本的List）
 **UseStreamLazyList**
+```
+Stream
+#::
+```
 
 #### 11.7. Different Ways to Create and Update an Array（不同的方式创建和更新数组）
 **DifferentWayCreateArray**
+```
+Array.range
+Array.fill
+Array.tabulate
+toArray
+```
 
-#### 11.8. Creating an Array Whose Size Can Change(ArrayBuffer)（创建一个可以改变的数组）
+#### 11.8. Creating an Array Whose Size Can Change(ArrayBuffer)（创建一个可以改变的数组ArrayBuffer）
 **CreateArrayWhoseSizeChange**
+```
+ArrayBuffer
++=
+++=
+append
+```
+
 
 #### 11.9. Deleting Array and ArrayBuffer Elements（删除Array和ArrayBuffer中的元素）
 **DeleteArrayAndArrayBufferElements**
+```
+-=
+--=
+remove
+filter
+take
+```
 
 #### 11.10. Sorting Arrays（数组排序）
 **SortArrays**
+```
+Sorting.quickSort
+```
 
 #### 11.11. Creating Multidimensional Arrays（创建多维数组）
 **CreateMultidimensionalArray**
+```
+Array.ofDim
+```
 
 #### 11.12. Creating Maps（创建Map）
 **CreateMap**
+```
+为可变的Mao创建一个别名
+```
 
 #### 11.13. Choosing a Map Implementation（选择Map实现）
-
 **ChooseMapImpl**
+```
+Scala有丰富的Map类型可以选择，甚至使用Java的Map类
+```
 
 #### 11.14. Adding, Updating, and Removing Elements with a Mutable Map（可变Map中增加、更新移除元素）
-
 **AddUpdateRemoveElementMultableMap**
+```
++=
+++=
+-=
+--=
+retain
+remove
+```
 
 #### 11.15. Adding, Updating, and Removing Elements with Immutable Maps（不可变Map中增加、更新移除元素）
-
 **AddUpdateRemoveElementImmultableMap**
+```
+即使我们声明的不可变Map是var.我们仍然不能对里面的内容进行修改。
+```
 
 #### 11.16. Accessing Map Values（访问Map的value值）
-
 **AccessMapValue**
+```
+withDefaultValue
+getOrElse
+get
+```
 
 #### 11.17. Traversing a Map（遍历Map）
-
 **TraverseMap**
+```
+mapValues
+transform
+```
 
 #### 11.18. Getting the Keys or Values from a Map（从Map中获取Key和Value值）
 **GetKeyValueFromMap**
+```
+keySet
+keys
+keysIterator
+values
+valuesIterator
+```
 
 #### 11.19. Reversing Keys and Values（反转键和值）
 **ReverseKeyAndValue**
 
 #### 11.20. Testing for the Existence of a Key or Value in a Map（测试Map中存在的键和值）
 **TestExistKeyValueInMap**
+```
+contains
+exists
+```
 
 #### 11.21. Filtering a Map（Map过滤）
 **FilterMap**
+```
+retain
+transform
+```
 
 #### 11.22. Sorting an Existing Map by Key or Value（通过Key或Value对Map进行排序）
 **SortExistMap**
+```
+retain
+transform
+filterKeys
+filter
+```
 
 #### 11.23. Finding the Largest Key or Value in a Map（找出map中key或者value的最大值）
-*FindLagestKeyOrValueInMap***
+**FindLagestKeyOrValueInMap**
+```
+max
+reduceLeft
+```
 
 #### 11.24. Adding Elements to a Set（向Set中增加元素）
 **AddElementToSet**
+```
+可变set和不可变set处理方式不同
+ Mutable set
+ +=
+ ++=
+ add 
+ 
+ Immutable set
+ +
+ ++
+```
 
 #### 11.25. Deleting Elements from Sets（向Set中删除元素）
 **DeleteElementFromSet**
+```
+Mutable set
+-=
+--=
+retain
+clear
+
+Immutable set
+-
+--
+filter
+take
+```
 
 #### 11.26. Using Sortable Sets（Set排序）
 **UseSortSet**
+```
+SortedSet
+```
 
 #### 11.27. Using a Queue（使用队列）
 **UseQueue**
+```
+Queue
+dequeue
+dequeueFirst
+dequeueAll
+```
 
 #### 11.28. Using a Stack（使用栈）
 **UseStack**
+```
+push
+pop
+top
+size
+isEmpty
+clear
+```
 
 #### 11.29. Using a Range（使用range）
 **UseRange**
-
-
+```
+until
+range
+to
+map
+tabulate
+```
 
 ###Chapter 12. Files and Processes（文件和进程）
-
 #### 12.0. Introduction
-
 
 #### 12.1. How to Open and Read a Text File（怎样打开和读取一个文本文件）
 **HowOpenReadTextFile**
@@ -983,6 +1113,7 @@ ListBuffer
 
 
 ### CHAPTER 16 Databases and Persistence
+#### 16.0. Introduction
 
 #### 16.1. Connecting to MySQL with JDBC
 **ScalaJdbcConnectSelect**

@@ -16,10 +16,4 @@ object ReverseKeyAndValue extends App{
   //As shown, the $5 wings were lost when the values became the keys,
   // because both the breadsticks and the wings had the String value $5.
 
-  val states = Map(
-    "AK" -> "Alaska",
-    "IL" -> "Illinois",
-    "KY" -> "Kentucky"
-  )
-
 }

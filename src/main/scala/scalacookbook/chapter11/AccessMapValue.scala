@@ -10,14 +10,16 @@ object AccessMapValue extends App{
   val az = states("习大大")
   println(az)
 
-
   //val s = states("FOO")
   //println(s)
 
   val states2 = Map("周杰伦" -> "昆凌").withDefaultValue("Not found")
   println(states2("林志玲"))
+
   println(states2("习大大"))
+
   println(states2("周杰伦"))
+
 
   val s2 = states.getOrElse("林志玲", "No such state")
   println(s2)
