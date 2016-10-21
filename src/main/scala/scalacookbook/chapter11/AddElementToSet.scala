@@ -5,6 +5,8 @@ package scalacookbook.chapter11
   */
 object AddElementToSet extends App{
 
+  //Mutable set
+
   // use var with mutable 创建空的set
   var set = scala.collection.mutable.Set[Int]()
 
@@ -28,10 +30,16 @@ object AddElementToSet extends App{
   println(set)
 
   //测试set集合中是否包含该元素
-  set.contains(5)
+  println(set.contains(5))
+
+  println("-----------------")
 
   //创建包含元素的set
   var set2 = scala.collection.mutable.Set(1, 2, 3)
+
+  println(set2)
+
+  println("--------------------")
 
   //Immutable set
 
@@ -46,6 +54,9 @@ object AddElementToSet extends App{
 
   // add elements from another sequence
   val s4 = s3 ++ List(6, 7)
+
+  println(s4)
+
 
   // declare your variable as a var,
   // and reassign the resulting set back to the same variable

@@ -15,10 +15,12 @@ object AddUpdateRemoveElementImmultableMap extends App{
   val c = b + ("AR" -> "Arkansas", "AZ" -> "Arizona")
   println(c)
 
+  //更新
   //update a key/value pair with an immutable map
   val d = c + ("AR" -> "banana")
   println(d)
 
+  //移除
   //To remove one element, use the - method.
   val e = d - "AR"
   println(e)
@@ -28,6 +30,8 @@ object AddUpdateRemoveElementImmultableMap extends App{
   println(f)
 
   //Discussion
+
+  //declare an immutable map as a var
   var x = Map("AL" -> "Alabama")//x: scala.collection.mutable.Map[String,String] = Map(AL -> Alabama)
 
   // add one element
@@ -51,5 +55,13 @@ object AddUpdateRemoveElementImmultableMap extends App{
   println(x)
 
   //即使我们声明的不可变Map是var.我们仍然不能对里面的内容进行修改。
+
+  //It’s important to understand that when you create an immutable map as a var, you still
+  //  have an immutable map. For instance, you can’t reassign an element in the map:
+
+  // x("AL") = "foo"   //error
+
+  //x被定义为一个var，在每一步的过程中，它被重新分配。
+  //这是一个微妙但很重要的区别。
 
 }
