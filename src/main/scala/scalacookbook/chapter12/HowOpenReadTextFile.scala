@@ -18,17 +18,26 @@ object HowOpenReadTextFile extends App {
     println(line)
   }
 
+  println("----------------------------")
 
   val lines = Source.fromFile("D:\\lilili.txt").getLines.toList
   println(lines)
+
+  println("----------------------------")
 
   val lines2 = Source.fromFile("D:\\lilili.txt").getLines.toArray
   lines.foreach(x=>print(x+" "))
   println
 
+  println("----------------------------")
 
   val fileContents = Source.fromFile(filename).getLines.mkString
   println(fileContents)
+
+  val fileContentsComma = Source.fromFile(filename).getLines.mkString(",")
+  println(fileContentsComma)
+
+  println("----------------------------")
 
   //方式二、Properly closing the file
   val bufferedSource = Source.fromFile("D:\\lilili.txt")
@@ -36,6 +45,9 @@ object HowOpenReadTextFile extends App {
     println(line.toUpperCase)
   }
   bufferedSource.close
+
+
+  println("------------discuss----------------")
 
   //Discussion
   import scala._
@@ -45,11 +57,13 @@ object HowOpenReadTextFile extends App {
     println(line)
   }
 
+  println("~~~~~~~~~~~~~~~~~")
+
   // also leaves the file open
   val contents = io.Source.fromFile("D:\\lilili.txt").mkString
   println("contents:"+contents)
 
-
+  println("~~~~~~~~~~~~~~~~~")
 
   //自动关闭资源
   //Automatically closing the resource
@@ -63,8 +77,9 @@ object HowOpenReadTextFile extends App {
     r.dispose()
   }
   */
+
   object Control {
-    def using[A <: { def close(): Unit }, B]
+    def using[A <: { def close(): Unit } , B]
     (resource: A)(f: A => B): B =
       try {
         f(resource)
@@ -86,6 +101,7 @@ object HowOpenReadTextFile extends App {
   }
   相当于f
   */
+
   using(io.Source.fromFile("D:\\lilili.txt")) { source => {
       for (line <- source.getLines) {
         println("liguodong:"+line)
@@ -98,6 +114,7 @@ object HowOpenReadTextFile extends App {
 
   import scala.io.Source
   import java.io.{FileNotFoundException, IOException}
+
   val fileName = "D:\\people.txt"
   try {
     for (line <- Source.fromFile(fileName).getLines) {
@@ -108,9 +125,11 @@ object HowOpenReadTextFile extends App {
     case e: IOException => println("Got an IOException!")
   }
 
+  println("------------------------")
 
   //This method returns a Some(List[String]) on success,
   //and None if something goes wrong, such as a FileNotFoundException.
+
   import Control._
   def readTextFile(filename: String): Option[List[String]] = {
     try {
@@ -123,14 +142,23 @@ object HowOpenReadTextFile extends App {
     }
   }
 
+
   //It can be used in the following ways.
   val FILE_NAME = "D:\\people.txt"
   println("--- FOREACH ---")
   val result = readTextFile(FILE_NAME)
-
   result foreach { strings =>
+    strings.foreach(print)
+  }
+  println("-----------------------")
+
+  val FILE_NAME2 = "D:\\lilili.txt"
+  val result2 = readTextFile(FILE_NAME2)
+  result2 foreach { strings =>
     strings.foreach(println)
   }
+
+  println("-----------------------")
 
   println("\n--- MATCH ---")
   readTextFile(FILE_NAME) match {
@@ -146,7 +174,7 @@ object HowOpenReadTextFile extends App {
 
 
   // specify the encoding
-  Source.fromFile("D:\\people.txt", "UTF-8")
+  Source.fromFile("D:\\lilili.txt", "UTF-8")
 
 
 }

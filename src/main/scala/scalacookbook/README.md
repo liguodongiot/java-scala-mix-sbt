@@ -1052,9 +1052,16 @@ tabulate
 
 #### 12.1. How to Open and Read a Text File（怎样打开和读取一个文本文件）
 **HowOpenReadTextFile**
+```
+Source.fromFile
+```
 
 #### 12.2. Writing Text Files（写文本文件）
 **WriteTextFiles**
+```
+PrintWriter
+FileWriter
+```
 
 #### 12.3. Reading and Writing Binary Files（读和写二进制文件）
 **ReadAndWriteBinaryFiles**
@@ -1065,8 +1072,13 @@ tabulate
 #### 12.5. How to Process a CSV File（怎样处理一个CSV文件）
 **HowProcessCsvFile**
 
+
 #### 12.6. Pretending that a String Is a File（假设字符串是一个文件）
 **PretendStringIsFile**
+```
+Source.fromFile
+Source.fromString
+```
 
 #### 12.7. Using Serialization（使用序列化）
 **UseSerialization**

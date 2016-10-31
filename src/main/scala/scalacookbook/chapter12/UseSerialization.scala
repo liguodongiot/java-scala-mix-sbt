@@ -6,7 +6,6 @@ import java.io._
   * Created by liguodong on 2016/8/7.
   */
 
-
 // create a serializable Stock class
 @SerialVersionUID(123L)
 class Stock(var symbol: String, var price: BigDecimal)
@@ -16,6 +15,7 @@ class Stock(var symbol: String, var price: BigDecimal)
 
 
 object UseSerialization extends App {
+
   // (1) create a Stock instance
   val nflx = new Stock("NFLX", BigDecimal(85.00))
 

@@ -17,17 +17,24 @@ object PretendStringIsFile extends App{
   val s = Source.fromString("foo\nbar\n")
   printLines(s)
 
-  val f = Source.fromFile("D:\\people.txt")
+  val f = Source.fromFile("D:\\lilili.txt")
   printLines(f)
 
+  val k = Source.fromFile("D:\\lilili.txt")
+  val list = FileUtils.getLinesUppercased(k)
+
+  for(temp <- list){
+    println(temp)
+  }
 
   //When writing unit tests, you might have a method like this that you’d like to test.
-
-
+  //单元测试
+  //FileUtilTests
 
 }
 
 
+//单元测试
 object FileUtils {
   def getLinesUppercased(source: io.Source): List[String] = {
     (for (line <- source.getLines) yield line.toUpperCase).toList
