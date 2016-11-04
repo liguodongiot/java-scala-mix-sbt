@@ -1086,11 +1086,17 @@ Source.fromString
 #### 12.8. Listing Files in a Directory（列出目录中的文件）
 **ListFilesInDirectory**
 
-#### 12.9. Listing Subdirectories Beneath a Directory
+#### 12.9. Listing Subdirectories Beneath a Directory（列出目录下的子目录）
 **ListSubdirectoriesBeneathDirectory**
 
-#### 12.10. Executing External Commands
+
+#### 12.10. Executing External Commands（）
 **ExecutExternalCommands**
+```
+!  方法 执行命令并返回它的状态
+!!  方法 执行命令并返回它的输出结果
+lines  方法 执行命令并返回他的结果作为一个Stream
+```
 
 #### 12.11. Executing External Commands and Using STDOUT
 **ExecuteExternalCommandsAndUsingStdout**

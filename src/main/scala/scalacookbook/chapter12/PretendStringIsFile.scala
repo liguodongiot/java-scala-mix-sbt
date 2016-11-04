@@ -8,6 +8,7 @@ import scala._
 object PretendStringIsFile extends App{
 
   import io.Source
+
   def printLines(source: Source) {
     for (line <- source.getLines) {
       println(line)
