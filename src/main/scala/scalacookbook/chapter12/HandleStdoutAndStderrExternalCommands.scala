@@ -18,12 +18,10 @@ object HandleStdoutAndStderrExternalCommands {
     println("stderr: " + stderr)
   */
 
-  /*
-  import sys.process._
-  val status = Seq("find", "/usr", "-name", "make") ! ProcessLogger(stdout
-    append _, stderr append _)
-  println(stdout)
-  println(stderr)
-  */
+//  import sys.process._
+//  val status = Seq("find", "/usr", "-name", "make") ! ProcessLogger(stdout
+//    append _, stderr append _)
+//  println(stdout)
+//  println(stderr)
 
 }
