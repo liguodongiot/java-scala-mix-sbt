@@ -1052,9 +1052,16 @@ tabulate
 
 #### 12.1. How to Open and Read a Text File（怎样打开和读取一个文本文件）
 **HowOpenReadTextFile**
+```
+Source.fromFile
+```
 
 #### 12.2. Writing Text Files（写文本文件）
 **WriteTextFiles**
+```
+PrintWriter
+FileWriter
+```
 
 #### 12.3. Reading and Writing Binary Files（读和写二进制文件）
 **ReadAndWriteBinaryFiles**
@@ -1065,8 +1072,13 @@ tabulate
 #### 12.5. How to Process a CSV File（怎样处理一个CSV文件）
 **HowProcessCsvFile**
 
+
 #### 12.6. Pretending that a String Is a File（假设字符串是一个文件）
 **PretendStringIsFile**
+```
+Source.fromFile
+Source.fromString
+```
 
 #### 12.7. Using Serialization（使用序列化）
 **UseSerialization**
@@ -1074,45 +1086,68 @@ tabulate
 #### 12.8. Listing Files in a Directory（列出目录中的文件）
 **ListFilesInDirectory**
 
-#### 12.9. Listing Subdirectories Beneath a Directory
+#### 12.9. Listing Subdirectories Beneath a Directory（列出目录下的子目录）
 **ListSubdirectoriesBeneathDirectory**
 
-#### 12.10. Executing External Commands
-**ExecutExternalCommands**
 
-#### 12.11. Executing External Commands and Using STDOUT
+#### 12.10. Executing External Commands（执行外部命令）
+**ExecutExternalCommands**
+```
+!  方法 执行命令并返回它的状态
+!!  方法 执行命令并返回它的输出结果
+lines  方法 执行命令并返回他的结果作为一个Stream
+```
+
+#### 12.11. Executing External Commands and Using STDOUT（执行外部命令和使用标准输出）
 **ExecuteExternalCommandsAndUsingStdout**
 
-#### 12.12. Handling STDOUT and STDERR for External Commands
+#### 12.12. Handling STDOUT and STDERR for External Commands（处理外部命令的输出和错误）
 **HandleStdoutAndStderrExternalCommands**
 
-#### 12.13. Building a Pipeline of Commands
+#### 12.13. Building a Pipeline of Commands（建立管道命令,这样执行shell内置命令）
 **BuildPipelineCommand**
 
-#### 12.14. Redirecting the STDOUT and STDIN of External Commands
-**RedirectStdoutAndStdinOfExternalCommands**
+#### 12.14. Redirecting the STDOUT and STDIN of External Commands（重定向外部命令，标准输入和标准输出）
+**RedirectStdoutAndStdinExtCmd**
 
-#### 12.15. Using AND (&&) and OR (||) with Processes
+#### 12.15. Using AND (&&) and OR (||) with Processes（进程中使用AND和OR）
 **UseAndOrWithProcess**
 
-#### 12.16. Handling Wildcard Characters in External Commands
+#### 12.16. Handling Wildcard Characters in External Commands（在外部命令中处理通配符）
 **HandleWildcardCharacters**
 
-#### 12.17. How to Run a Process in a Different Directory
+#### 12.17. How to Run a Process in a Different Directory（在不同的目录运行进程）
 **RunProcessInDifferentDirectory**
 
-#### 12.18. Setting Environment Variables When Running Commands
+#### 12.18. Setting Environment Variables When Running Commands（运行命令行的时候设置环境变量）
 **SetEnvironmentVarWhenRunCommands**
 
-#### 12.19. An Index of Methods to Execute External Commands
+#### 12.19. An Index of Methods to Execute External Commands（执行外部命令方法的索引）
 **AnIndexMethodsExecuteExternalCommands**
+```
+!
+!!
+run
+lines
+lines_!
+
+#<
+#>
+#>>
+
+cmd1 #| cmd2
+cmd1 ### cmd2
+cmd1 #> cmd2
+cmd1 #&& cmd2
+cmd1 #|| cmd2
+cmd1 #&& cmd2 #|| cmd3
+```
+
+### Chapter 13. Actors and Concurrency（Actors和并发）
 
 
 
-
-
-
-### CHAPTER 16 Databases and Persistence
+### CHAPTER 16 Databases and Persistence（）
 #### 16.0. Introduction
 
 #### 16.1. Connecting to MySQL with JDBC

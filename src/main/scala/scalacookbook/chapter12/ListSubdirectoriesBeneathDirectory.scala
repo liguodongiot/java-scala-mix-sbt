@@ -14,19 +14,19 @@ object ListSubdirectoriesBeneathDirectory extends App {
       .map(_.getName)
       .toList
 
-  getListOfSubDirectories(new File("G:\\githubSource")).foreach(println)
+  getListOfSubDirectories(new File("E:\\study\\sourcecode\\JavaFrames")).foreach(println)
 
 
   //this method returns a List[String]. If you’d rather return a List[File],
   //write the method as follows, dropping the map method call.
-
-  //dir.listFiles.filter(_.isDirectory).toList
+  val listFile= new File("E:\\study\\sourcecode\\JavaFrames").listFiles.filter(_.isDirectory).toList
+  println(listFile)
 
 
   //Discussion
-
+  //类Java方式实现
   // write a more Java-like (imperative) version
-  def getListOfSubDirectories1(dir: File): List[String] = {
+  def getListOfSubDirectoriesLikeJava(dir: File): List[String] = {
     val files = dir.listFiles
     val dirNames = collection.mutable.ArrayBuffer[String]()
     for (file <- files) {
@@ -37,9 +37,10 @@ object ListSubdirectoriesBeneathDirectory extends App {
     dirNames.toList
   }
 
+  //Scala方式，更简洁
   // After getting more comfortable with Scala,
   // she’d realize the code can be shortened.
-  def getListOfSubDirectories2(dir: File): List[String] = {
+  def getListOfSubDirectoriesScala(dir: File): List[String] = {
     val files = dir.listFiles
     val dirs = for {
       file <- files

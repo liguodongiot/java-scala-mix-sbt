@@ -16,34 +16,37 @@ object HowProcessCsvFile extends App{
     // do whatever you want with the columns here
     println(s"${cols(0)}|${cols(1)}|${cols(2)}|${cols(3)}")
   }
-
-
-
-  for (line <- bufferedSource.getLines) {
-    val Array(month, revenue, expenses, profit) = line.split(",").map(_.trim)
-    println(s"$month $revenue $expenses $profit")
-  }
-
-
   bufferedSource.close
 
   println("~~~~~~~~~~~~~")
+  val bufferedSource2 = io.Source.fromFile("D:\\finance.csv")
+  for (line <- bufferedSource2.getLines) {
+    val Array(month, revenue, expenses, profit) = line.split(",").map(_.trim)
+    println(s"$month $revenue $expenses $profit")
+  }
+  bufferedSource2.close
+
+  println("~~~~~~~~~~~~~")
+
   //If the first line of the file is a header line and you want to skip it,
   // just add drop(1) after getLines.
-  val bufferedSourceHead = io.Source.fromFile("D:\\financeHead.csv")
+  val bufferedSourceHead = io.Source.fromFile("D:\\finance.csv")
   for (line <- bufferedSourceHead.getLines.drop(1)) {
     val cols = line.split(",").map(_.trim)
     // do whatever you want with the columns here
     println(s"${cols(0)}|${cols(1)}|${cols(2)}|${cols(3)}")
   }
 
-  println("~~~~~~~~~~~~~")
+  println("~~~~~~Csv~~~~~~~")
   CsvFile.foreachWay()
 
   println("~~~~~~~~~~~~~")
   CsvFile.usezipWithIndex()
 
   println("~~~~~~~~~~~~~")
+
+
+  //不知道行数时
   //don’t know the number of rows ahead of time, read each row as an Array[String],
   //adding each row to an ArrayBuffer as the file is read.
 
@@ -51,8 +54,9 @@ object HowProcessCsvFile extends App{
 
   // each row is an array of strings (the columns in the csv file)
   val rows = ArrayBuffer[Array[String]]()
+
   // (1) read the csv data
-  CsvFile.using(io.Source.fromFile("D:\\financeHead.csv")) { source =>
+  CsvFile.using(io.Source.fromFile("D:\\finance.csv")) { source =>
     for (line <- source.getLines) {
       rows += line.split(",").map(_.trim)
     }
@@ -66,6 +70,7 @@ object HowProcessCsvFile extends App{
 
 
 object CsvFile{
+
   def foreachWay(): Unit ={
     val bufferedSource = io.Source.fromFile("D:\\finance.csv")
 
@@ -106,8 +111,6 @@ object CsvFile{
     }
 
   }
-
-
 
   def using[A <: { def close(): Unit }, B](resource: A)(f: A => B): B =
     try {

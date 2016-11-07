@@ -1,14 +1,15 @@
 package scalacookbook.chapter12
 
 import scala._
+
 /**
   * Created by liguodong on 2016/8/4.
   */
 object HowProcessEveryCharacterTextFile extends App{
 
-  val source = io.Source.fromFile("D:\\people.txt")
+  val source = io.Source.fromFile("D:\\lilili.txt")
   for (char <- source) {
-    println(char.toUpper)
+    print(char.toUpper)
   }
   source.close
 
@@ -22,10 +23,9 @@ object HowProcessEveryCharacterTextFile extends App{
   // takes 100 seconds to run on an Apache
   // access logfile that is ten million lines long.
 
-
-
   // run time: took 100 secs
   def countLines1(source: io.Source): Long = {
+    //ASCII字符表中  10-->0A	 表示 换行/新行
     val NEWLINE = 10
     var newlineCount = 0L
     for {
@@ -74,7 +74,15 @@ object HowProcessEveryCharacterTextFile extends App{
     newlineCount
   }
 
+  import scala.io.Source
+  val filename = "D:\\lilili.txt"
+  var sourcetest = Source.fromFile(filename)
 
+  println(countLines1(sourcetest))
+
+  println(countLines2(sourcetest))
+
+  println(countLines3(sourcetest))
 
 
 }
