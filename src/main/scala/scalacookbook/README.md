@@ -1144,10 +1144,90 @@ cmd1 #&& cmd2 #|| cmd3
 ```
 
 ### Chapter 13. Actors and Concurrency（Actors和并发）
+#### Introduction
+```
+The Actor model is at a much higher level of abstraction than threads,
+and once you understand the model, it lets you focus on solving the problem at hand,
+rather than worrying about the low-level problems of threads, locks, and shared data.
+
+Although earlier versions of Scala included its original Actors library, Scala 2.10.0 began
+the official transition to the Akka actor library from Typesafe, which is more robust
+than the original library. Scala 2.10.1 then deprecated(过时) the original scala.actors library.
+```
+
+#### The Actor Model
+```
+在一个以Actor为基础的系统中，Actor是最小的单位。如一个对象在一个面向对象的系统中。
+像一个对象，一个actor封装了状态和行为。
+你不能窥视一个Actor得到它的状态，但是你可以给actor发送一个消息请求状态信息，但是你不能执行它的一个方法或访问它的字段。
+一个actor有一个邮箱，它的目的是在它的信箱里处理消息。
+你通过发送一个不可变的消息与一个Actor沟通，这些消息进入Actor的邮箱里。
+当一个actor收到一个actor时，就像是把一封信从信箱里拿出来一样，打开这封信，通过它的一种算法处理这封邮件。
+然后处理邮箱的下一封邮件。如果没有更多的消息，actor会等待直到收到一封邮件。
+```
+
+#### Other Features
+```
+Scala提供了其他方便的方式编写代码执行并行操作。
+future能够被简单的使用。
+Scala集合库还包括特殊的并行集合，他可以通过一定的算法提高大集合的性能。
+```
+
+#### 13.1. Getting Started with a Simple Actor（执行一个简单的Actor）
+**StartSimpleActor**
+
+#### 13.2. Creating an Actor Whose Class Constructor Requires Arguments（创建一个Actor，类的构造函数有参数）
+**CreateActorConstructorArguments**
+
+#### 13.3. How to Communicate Between Actors（Actor之间怎么通信）
+**HowCommunicateBetweenActors**
+
+#### 13.4. Understanding the Methods in the Akka Actor Lifecycle（理解Actor的生命周期）
+**UnderstandActorLifecycle**
+
+#### 13.5. Starting an Actor
+**StartActor**
+
+#### 13.6. Stopping Actors
+**StopActors**
+
+#### 13.7. Shutting Down the Akka Actor System
+**ShutDownAkkaActor**
+
+#### 13.8. Monitoring the Death of an Actor with watch
+**MonitorDeathActor**
+**MonitorDeathActorDis**
+
+#### 13.9. Simple Concurrency with Futures
+**SimpleConcurrencyFuture**
+**SimpleConcurrencyFutureCallback**
+**SimpleConcurrencyFutureCallbackSucFai**
+**SimpleConcurrencyFutureReturnFuture**
+**SimpleConcurrencyFutureMultiple**
+
+#### 13.10. Sending a Message to an Actor and Waiting for a Reply
+**SendMessageActorWaitReply**
+
+#### 13.11. Switching Between Different States with become
+**SwitchBetweenDifferentState**
+
+#### 13.12. Using Parallel Collections（使用并行集合）
+**UseParallelCollection**
 
 
 
-### CHAPTER 16 Databases and Persistence（）
+### Chapter 15. Web Services
+
+#### Introduction
+
+#### 15.1. Creating a JSON String from a Scala Object
+**LiftJsonTest**
+**GsonTest**
+**LiftJsonWithCollections**
+
+
+
+### CHAPTER 16 Databases and Persistence（数据库和持久化）
 #### 16.0. Introduction
 
 #### 16.1. Connecting to MySQL with JDBC

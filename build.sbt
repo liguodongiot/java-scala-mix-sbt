@@ -44,7 +44,12 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.39"
 libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.1.3"
   //,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.10" % "2.1.2"
-  ,"com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2"
+  , "com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2"
+  , "com.typesafe.akka" %% "akka-actor" % "2.3.15"
+  , "org.mockito" % "mockito-core" % "1.10.19" % "test"
+  , "net.liftweb" % "lift-webkit_2.11" % "2.6.3"
+  , "net.liftweb" % "lift-json_2.11" % "2.6.3"
+  , "com.google.code.gson" % "gson" % "2.6.2"
 )
 
 
