@@ -11,6 +11,7 @@ object StartActor extends App{
   import scalacookbook.chapter13.section05._
 
   val actorSystem = ActorSystem("ParentChildTest")
+
   val parent = actorSystem.actorOf(Props[Parent], name = "Parent")
 
   // send messages to Parent to create to child actors
