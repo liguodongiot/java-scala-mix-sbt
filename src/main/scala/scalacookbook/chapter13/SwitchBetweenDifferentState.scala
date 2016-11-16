@@ -12,17 +12,26 @@ object SwitchBetweenDifferentState extends App{
   val system = ActorSystem("BecomeHulkExample")
   val davidBanner = system.actorOf(Props[DavidBanner], name = "DavidBanner")
 
+  //初始化成正常状态
   davidBanner ! ActNormalMessage // init to normalState
+
+
   davidBanner ! TryToFindSolution
+
+  //切换成了生气状态
   davidBanner ! BadGuysMakeMeAngry
+
   Thread.sleep(1000)
 
+  //重新切换成正常状态
   davidBanner ! ActNormalMessage
+
   system.shutdown
 
 }
 
 package section11{
+
   case object ActNormalMessage
   case object TryToFindSolution
   case object BadGuysMakeMeAngry

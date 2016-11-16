@@ -21,11 +21,13 @@ object StartActor extends App{
 
   // lookup Jonathan, then kill it
   println("Main:Sending Jonathan a PoisonPill ...")
+
   val jonathan = actorSystem.actorSelection("/user/Parent/Jonathan")
   jonathan ! PoisonPill
 
   println("Main:jonathan was killed")
   Thread.sleep(5000)
+
   println("waiting 5 s.")
   actorSystem.shutdown
 
@@ -61,6 +63,7 @@ package section05 {
       case CreateChild(name) =>
         // Parent creates a new Child here
         println(s"Parent about to create Child ($name) ...")
+
         val child = context.actorOf(Props[Child], name = s"$name")
         child ! Name(name)
       case _ => println(s"Parent got some other message.")

@@ -14,6 +14,7 @@ import scala.language.postfixOps
 object StopActors extends App {
 
   import scalacookbook.chapter13.section06._
+
   //There are several ways to stop Akka actors.
   // The most common ways are to call
   // system.stop(actorRef) at the ActorSystem level
@@ -24,7 +25,6 @@ object StopActors extends App {
   // Program a gracefulStop
 
 
-
   //The stop method lets the actor finish
   // processing the current message in its mailbox (if any),
   // and then stops it.
@@ -33,6 +33,7 @@ object StopActors extends App {
   // process all messages that are in the mailbox
   // ahead of it before stopping it.
 
+  //最常用的方式
   //Calling actorSystem.stop(actor) and context.stop(actor)
   // are the most common ways to stop an actor.
 
@@ -41,11 +42,15 @@ object StopActors extends App {
   val actorSystem1 = ActorSystem("SystemStopExample")
   val actor1 = actorSystem1.actorOf(Props[TestActor1], name = "test1")
   actor1 ! "hello"
+
   // stop our actor
   actorSystem1.stop(actor1)
+
   actorSystem1.shutdown
 
-  println("~~~~~~~~~~~~~~~~~~")
+  println("----------")
+  Thread.sleep(2000)
+
 
   //As mentioned, using context.stop(actorRef) is similar to
   // using actorSystem.stop(actorRef); just use context.stop(actorRef)
@@ -57,15 +62,18 @@ object StopActors extends App {
   val actor2 = system2.actorOf(Props[TestActor2], name = "test2")
   // a simple message
   actor2 ! "before PoisonPill"
+  Thread.sleep(2000)
   // the PoisonPill
   actor2 ! PoisonPill
 
+  Thread.sleep(2000)
   // these messages will not be processed
   actor2 ! "after PoisonPill"
   actor2 ! "hello?!"
   system2.shutdown
 
   println("~~~~~~~~~~~~~~~~~~")
+  Thread.sleep(2000)
 
   /*gracefulStop*/
   val system3 = ActorSystem("GracefulStopTest")
@@ -76,6 +84,7 @@ object StopActors extends App {
 
     Await.result(stopped, 3 seconds)
     println("testActor3 was stopped")
+
   } catch {
     case e:Exception => e.printStackTrace
   } finally {
@@ -95,6 +104,7 @@ object StopActors extends App {
 }
 
 package section06{
+
   class TestActor1 extends Actor {
     def receive = {
       case _ => println("a message was received")
@@ -108,8 +118,6 @@ package section06{
     }
     override def postStop { println("TestActor2::postStop called") }
   }
-
-
 
   class TestActor3 extends Actor {
     def receive = {

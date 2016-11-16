@@ -13,6 +13,10 @@ object SimpleConcurrencyFutureReturnFuture extends App{
 
   implicit val baseTime = System.currentTimeMillis
 
+  //future
+  // @deprecated("Use `Future { ... }` instead.", "2.11.0")
+  // removal planned for 2.13.0
+
   def longRunningComputation(i: Int): Future[Int] = future {
     sleep(100)
     i + 1

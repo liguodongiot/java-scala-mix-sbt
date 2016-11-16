@@ -20,6 +20,7 @@ object SimpleConcurrencyFutureMultiple extends App {
   val result3 = Cloud.runAlgorithm(30)
 
   println("before for-comprehension")
+
   val result = for {
     r1 <- result1
     r2 <- result2
@@ -65,14 +66,18 @@ object SimpleConcurrencyFutureMultiple extends App {
 }
 
 package section09{
+
   object Cloud {
-    def runAlgorithm(i: Int): Future[Int] = future {
+
+    def runAlgorithm(i: Int): Future[Int] = Future {
+
       val sleepTime = Random.nextInt(500)
       println(Thread.currentThread().getName+" waitTime:"+sleepTime)
       Thread.sleep(sleepTime)
       val result = i + 10
       println(Thread.currentThread().getName+s" returning result from cloud: $result")
       result
+
     }
 
 

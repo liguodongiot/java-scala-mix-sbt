@@ -12,6 +12,7 @@ import akka.actor._
 object MonitorDeathActor extends App {
 
   import scalacookbook.chapter13.section08._
+
   // create the ActorSystem instance
   val system = ActorSystem("DeathWatchTest")
 
@@ -20,16 +21,18 @@ object MonitorDeathActor extends App {
 
   // lookup kenny, then kill it
   val kenny = system.actorSelection("/user/Parent/Kenny")
+
+  kenny ! "hello,world..."
+
   kenny ! PoisonPill
   Thread.sleep(5000)
   println("calling system.shutdown")
   system.shutdown
 
-
-
 }
 
 package section08{
+
   class Kenny extends Actor {
     def receive = {
       case _ => println("Kenny received a message")
@@ -37,10 +40,10 @@ package section08{
   }
 
   class Parent extends Actor {
+
     // start Kenny as a child, then keep an eye on it
     val kenny = context.actorOf(Props[Kenny], name = "Kenny")
     context.watch(kenny)
-
 
     def receive = {
       case Terminated(kenny) => println("OMG, they killed Kenny")

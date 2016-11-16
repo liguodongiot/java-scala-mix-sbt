@@ -8,10 +8,12 @@ import akka.actor.{ActorSystem, Props}
 object MonitorDeathActorDis extends App{
 
   import scalacookbook.chapter13.section08.discussion._
+
   //Discussion
   // create the ActorSystem instance
   val system = ActorSystem("DeathWatchTest")
 
+  //创建Parent Actor 会创建 Kenny Actor
   // create the Parent that will create Kenny
   val parent = system.actorOf(Props[Parent2], name = "Parent2")
 
@@ -24,18 +26,17 @@ object MonitorDeathActorDis extends App{
   kenny ! "Hello?"
 
   Thread.sleep(5000)
-  println("calling system.shutdown")
+  println("Main:calling system.shutdown")
   system.shutdown
 
 
-
-  //Looking up actors 查看Actor
+  //Looking up actors 查看Actor 的几种方式
 
   //1
   //val kenny = system.actorSelection("/user/Parent/Kenny")
 
   //2
-  //You can also look up actors using a relative path.
+  //You can also look up actors using a relative path(相对路径).
   // If kenny had a sibling actor,
   // it could have looked up kenny using its own context.
 
@@ -47,7 +48,6 @@ object MonitorDeathActorDis extends App{
 
   //val kenny = system.actorFor("akka://DeathWatchTest/user/Parent/Kenny")
   //val kenny = system.actorFor(Seq("user", "Parent", "Kenny"))
-
 
   //4
   //It could also be looked up from a sibling like this:
@@ -92,7 +92,5 @@ package section08.discussion {
       case _ => println("Parent received a message")
     }
   }
-
-
 
 }

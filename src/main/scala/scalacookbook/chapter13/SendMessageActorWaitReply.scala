@@ -11,16 +11,19 @@ import scala.language.postfixOps
   * Created by liguodong on 2016/8/14.
   */
 object SendMessageActorWaitReply extends App{
+
   import scalacookbook.chapter13.section10._
 
   // create the system and actor
   val system = ActorSystem("AskTestSystem")
+
   val myActor = system.actorOf(Props[TestActor], name = "myActor")
 
-  // (1) this is one way to "ask" another actor for information
   implicit val timeout = Timeout(5 seconds)
 
+  // (1) this is one way to "ask" another actor for information
   val future = myActor ? AskNameMessage
+
   val result = Await.result(future, timeout.duration).asInstanceOf[String]
   println(result)
 
@@ -35,6 +38,7 @@ object SendMessageActorWaitReply extends App{
 }
 
 package section10{
+
   case object AskNameMessage
 
   class TestActor extends Actor {

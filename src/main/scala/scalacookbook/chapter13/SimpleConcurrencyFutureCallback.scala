@@ -11,7 +11,6 @@ object SimpleConcurrencyFutureCallback extends App {
 
   //Run one thing, but don’t block—use callback
 
-
   //There are three callback methods: onComplete, onSuccess, and onFailure.
   println("starting calculation ...")
   val f = Future {
@@ -20,6 +19,7 @@ object SimpleConcurrencyFutureCallback extends App {
   }
 
   println("before onComplete")
+
   f.onComplete {
     case Success(value) => println(s"Got the callback, meaning = $value")
     case Failure(e) => e.printStackTrace

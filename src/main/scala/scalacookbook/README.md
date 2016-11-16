@@ -1185,30 +1185,52 @@ Scala集合库还包括特殊的并行集合，他可以通过一定的算法提
 #### 13.4. Understanding the Methods in the Akka Actor Lifecycle（理解Actor的生命周期）
 **UnderstandActorLifecycle**
 
-#### 13.5. Starting an Actor
+#### 13.5. Starting an Actor（启动一个Actor）
 **StartActor**
+```
+start an Akka actor, 
+or attempt to control the start of an actor.
+```
 
-#### 13.6. Stopping Actors
+#### 13.6. Stopping Actors(停止Actor)
 **StopActors**
+```
+stop one or more running Akka actors
+停止Actor的几种方式：
+system.stop and context.stop
+PoisonPill
+Kill
 
-#### 13.7. Shutting Down the Akka Actor System
+
+stop method                 The actor will continue to process its current message (if any), but no additional messages will be
+processed. See additional notes in the paragraphs that follow.
+
+PoisonPill message          A PoisonPill message will stop an actor when the message is processed. A PoisonPill
+message is queued just like an ordinary message and will be handled after other messages queued
+ahead of it in its mailbox.
+
+gracefulStop method         Lets you attempt to terminate actors gracefully, waiting for them to timeout. The documentation
+states that this is a good way to terminate actors in a specific order.
+```
+
+#### 13.7. Shutting Down the Akka Actor System(关闭Akka Actor系统)
 **ShutDownAkkaActor**
 
-#### 13.8. Monitoring the Death of an Actor with watch
+#### 13.8. Monitoring the Death of an Actor with watch（监测一个Actor的死亡）
 **MonitorDeathActor**
 **MonitorDeathActorDis**
 
-#### 13.9. Simple Concurrency with Futures
+#### 13.9. Simple Concurrency with Futures（关于Futures简单的并发）
 **SimpleConcurrencyFuture**
 **SimpleConcurrencyFutureCallback**
 **SimpleConcurrencyFutureCallbackSucFai**
 **SimpleConcurrencyFutureReturnFuture**
 **SimpleConcurrencyFutureMultiple**
 
-#### 13.10. Sending a Message to an Actor and Waiting for a Reply
+#### 13.10. Sending a Message to an Actor and Waiting for a Reply(向一个Actor发送一个消息然后等待回复)
 **SendMessageActorWaitReply**
 
-#### 13.11. Switching Between Different States with become
+#### 13.11. Switching Between Different States with become（在不同的状态之间切换）
 **SwitchBetweenDifferentState**
 
 #### 13.12. Using Parallel Collections（使用并行集合）
