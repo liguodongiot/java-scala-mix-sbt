@@ -1,9 +1,9 @@
-package scalainaction.actor
+package akkainaction.actor
 
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.event.Logging
 
-import scalainaction.level.StartMessage
+import akkainaction.level.StartMessage
 
 /**
   * Created by liguodong on 2016/11/16.

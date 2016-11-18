@@ -1,4 +1,4 @@
-package scalainaction.actor
+package akkainaction.actor
 
 import akka.actor.Actor.Receive
 import akka.actor.{Actor, ActorSystem, Props}
