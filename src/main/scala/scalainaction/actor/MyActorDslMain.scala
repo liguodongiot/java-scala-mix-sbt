@@ -9,7 +9,10 @@ import akka.actor.{Actor, ActorSystem}
 object MyActorDslMain extends App {
 
   /////////////////////////////////
-  /////////
+  /////////////////////////////////
+
+
+
 
 }
 
@@ -17,6 +20,7 @@ object MyActorDslMain extends App {
 
 class MyActorDsl {
   implicit val system = ActorSystem("demo")
+
   def createActor = {
     actor(new Act {
       become {
@@ -24,6 +28,7 @@ class MyActorDsl {
       }
     })
   }
+
 }
 
 
