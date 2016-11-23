@@ -1,4 +1,4 @@
-package scalainaction.level
+package akkainaction.level
 
 import akka.actor.{Actor, ActorSystem, Props}
 
